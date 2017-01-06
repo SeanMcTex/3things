@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EntryViewController: UIViewController {
 
+    @IBOutlet weak var goal1Field: UITextField!
+    @IBOutlet weak var goal2Field: UITextField!
+    @IBOutlet weak var goal3Field: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +24,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func didPushSetGoalsButton(_ sender: AnyObject) {
+    }
 
 }
 
