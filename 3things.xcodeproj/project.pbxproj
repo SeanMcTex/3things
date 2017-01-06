@@ -16,6 +16,11 @@
 		14F99E331E1F35B2008D6DAE /* GoalsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E321E1F35B2008D6DAE /* GoalsManager.swift */; };
 		14F99E351E1F36D9008D6DAE /* GoalsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E341E1F36D9008D6DAE /* GoalsManagerTests.swift */; };
 		14F99E361E1F38C2008D6DAE /* GoalsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E321E1F35B2008D6DAE /* GoalsManager.swift */; };
+		14F99E3E1E1FF831008D6DAE /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F99E3D1E1FF831008D6DAE /* NotificationCenter.framework */; };
+		14F99E411E1FF831008D6DAE /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E401E1FF831008D6DAE /* TodayViewController.swift */; };
+		14F99E441E1FF831008D6DAE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F99E421E1FF831008D6DAE /* MainInterface.storyboard */; };
+		14F99E481E1FF831008D6DAE /* 3things Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 14F99E3B1E1FF831008D6DAE /* 3things Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		14F99E4D1E1FF8BA008D6DAE /* GoalsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E321E1F35B2008D6DAE /* GoalsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,9 +38,31 @@
 			remoteGlobalIDString = 14F99E001E1E7EA1008D6DAE;
 			remoteInfo = 3things;
 		};
+		14F99E461E1FF831008D6DAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14F99DF91E1E7EA1008D6DAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14F99E3A1E1FF831008D6DAE;
+			remoteInfo = "3things Today";
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		14F99E4C1E1FF831008D6DAE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				14F99E481E1FF831008D6DAE /* 3things Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		14A3C0511E201DCF00362591 /* 3things Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "3things Today.entitlements"; sourceTree = "<group>"; };
 		14F99E011E1E7EA1008D6DAE /* 3things.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3things.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F99E041E1E7EA1008D6DAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14F99E061E1E7EA1008D6DAE /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +77,12 @@
 		14F99E261E1E7EA1008D6DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F99E321E1F35B2008D6DAE /* GoalsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsManager.swift; sourceTree = "<group>"; };
 		14F99E341E1F36D9008D6DAE /* GoalsManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsManagerTests.swift; sourceTree = "<group>"; };
+		14F99E3B1E1FF831008D6DAE /* 3things Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "3things Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14F99E3D1E1FF831008D6DAE /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		14F99E401E1FF831008D6DAE /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		14F99E431E1FF831008D6DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		14F99E451E1FF831008D6DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14F99E4E1E200771008D6DAE /* 3things.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = 3things.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +107,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		14F99E381E1FF831008D6DAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14F99E3E1E1FF831008D6DAE /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,6 +124,8 @@
 				14F99E031E1E7EA1008D6DAE /* 3things */,
 				14F99E181E1E7EA1008D6DAE /* 3thingsTests */,
 				14F99E231E1E7EA1008D6DAE /* 3thingsUITests */,
+				14F99E3F1E1FF831008D6DAE /* 3things Today */,
+				14F99E3C1E1FF831008D6DAE /* Frameworks */,
 				14F99E021E1E7EA1008D6DAE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +136,7 @@
 				14F99E011E1E7EA1008D6DAE /* 3things.app */,
 				14F99E151E1E7EA1008D6DAE /* 3thingsTests.xctest */,
 				14F99E201E1E7EA1008D6DAE /* 3thingsUITests.xctest */,
+				14F99E3B1E1FF831008D6DAE /* 3things Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +144,7 @@
 		14F99E031E1E7EA1008D6DAE /* 3things */ = {
 			isa = PBXGroup;
 			children = (
+				14F99E4E1E200771008D6DAE /* 3things.entitlements */,
 				14F99E041E1E7EA1008D6DAE /* AppDelegate.swift */,
 				14F99E061E1E7EA1008D6DAE /* EntryViewController.swift */,
 				14F99E081E1E7EA1008D6DAE /* Main.storyboard */,
@@ -129,6 +174,25 @@
 			path = 3thingsUITests;
 			sourceTree = "<group>";
 		};
+		14F99E3C1E1FF831008D6DAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14F99E3D1E1FF831008D6DAE /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		14F99E3F1E1FF831008D6DAE /* 3things Today */ = {
+			isa = PBXGroup;
+			children = (
+				14A3C0511E201DCF00362591 /* 3things Today.entitlements */,
+				14F99E401E1FF831008D6DAE /* TodayViewController.swift */,
+				14F99E421E1FF831008D6DAE /* MainInterface.storyboard */,
+				14F99E451E1FF831008D6DAE /* Info.plist */,
+			);
+			path = "3things Today";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,10 +203,12 @@
 				14F99DFD1E1E7EA1008D6DAE /* Sources */,
 				14F99DFE1E1E7EA1008D6DAE /* Frameworks */,
 				14F99DFF1E1E7EA1008D6DAE /* Resources */,
+				14F99E4C1E1FF831008D6DAE /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				14F99E471E1FF831008D6DAE /* PBXTargetDependency */,
 			);
 			name = 3things;
 			productName = 3things;
@@ -185,6 +251,23 @@
 			productReference = 14F99E201E1E7EA1008D6DAE /* 3thingsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		14F99E3A1E1FF831008D6DAE /* 3things Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14F99E491E1FF831008D6DAE /* Build configuration list for PBXNativeTarget "3things Today" */;
+			buildPhases = (
+				14F99E371E1FF831008D6DAE /* Sources */,
+				14F99E381E1FF831008D6DAE /* Frameworks */,
+				14F99E391E1FF831008D6DAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "3things Today";
+			productName = "3things Today";
+			productReference = 14F99E3B1E1FF831008D6DAE /* 3things Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,6 +282,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4U7FD3V45R;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					14F99E141E1E7EA1008D6DAE = {
 						CreatedOnToolsVersion = 8.0;
@@ -209,6 +297,16 @@
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 14F99E001E1E7EA1008D6DAE;
+					};
+					14F99E3A1E1FF831008D6DAE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4U7FD3V45R;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -228,6 +326,7 @@
 				14F99E001E1E7EA1008D6DAE /* 3things */,
 				14F99E141E1E7EA1008D6DAE /* 3thingsTests */,
 				14F99E1F1E1E7EA1008D6DAE /* 3thingsUITests */,
+				14F99E3A1E1FF831008D6DAE /* 3things Today */,
 			);
 		};
 /* End PBXProject section */
@@ -254,6 +353,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14F99E391E1FF831008D6DAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14F99E441E1FF831008D6DAE /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +394,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		14F99E371E1FF831008D6DAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14F99E4D1E1FF8BA008D6DAE /* GoalsManager.swift in Sources */,
+				14F99E411E1FF831008D6DAE /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -299,6 +415,11 @@
 			isa = PBXTargetDependency;
 			target = 14F99E001E1E7EA1008D6DAE /* 3things */;
 			targetProxy = 14F99E211E1E7EA1008D6DAE /* PBXContainerItemProxy */;
+		};
+		14F99E471E1FF831008D6DAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14F99E3A1E1FF831008D6DAE /* 3things Today */;
+			targetProxy = 14F99E461E1FF831008D6DAE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -317,6 +438,14 @@
 				14F99E0E1E1E7EA1008D6DAE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		14F99E421E1FF831008D6DAE /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14F99E431E1FF831008D6DAE /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -418,7 +547,9 @@
 		14F99E2A1E1E7EA1008D6DAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = 3things/3things.entitlements;
 				DEVELOPMENT_TEAM = 4U7FD3V45R;
 				INFOPLIST_FILE = 3things/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -432,7 +563,9 @@
 		14F99E2B1E1E7EA1008D6DAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = 3things/3things.entitlements;
 				DEVELOPMENT_TEAM = 4U7FD3V45R;
 				INFOPLIST_FILE = 3things/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -497,6 +630,34 @@
 			};
 			name = Release;
 		};
+		14F99E4A1E1FF831008D6DAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "3things Today/3things Today.entitlements";
+				DEVELOPMENT_TEAM = 4U7FD3V45R;
+				INFOPLIST_FILE = "3things Today/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.-things.-things-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		14F99E4B1E1FF831008D6DAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "3things Today/3things Today.entitlements";
+				DEVELOPMENT_TEAM = 4U7FD3V45R;
+				INFOPLIST_FILE = "3things Today/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.-things.-things-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -516,6 +677,7 @@
 				14F99E2B1E1E7EA1008D6DAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14F99E2C1E1E7EA1008D6DAE /* Build configuration list for PBXNativeTarget "3thingsTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +686,7 @@
 				14F99E2E1E1E7EA1008D6DAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14F99E2F1E1E7EA1008D6DAE /* Build configuration list for PBXNativeTarget "3thingsUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +695,16 @@
 				14F99E311E1E7EA1008D6DAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14F99E491E1FF831008D6DAE /* Build configuration list for PBXNativeTarget "3things Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14F99E4A1E1FF831008D6DAE /* Debug */,
+				14F99E4B1E1FF831008D6DAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

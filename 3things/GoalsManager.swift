@@ -9,6 +9,9 @@
 import Foundation
 
 typealias Goal = String
+public let standardDomain = "group.mcmains.net.things"
+
+
 private let goalsKey = "goalsKey"
 
 protocol GoalsManagerDelegate {
