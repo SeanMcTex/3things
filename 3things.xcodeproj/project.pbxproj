@@ -21,6 +21,9 @@
 		14F99E441E1FF831008D6DAE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F99E421E1FF831008D6DAE /* MainInterface.storyboard */; };
 		14F99E481E1FF831008D6DAE /* 3things Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 14F99E3B1E1FF831008D6DAE /* 3things Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		14F99E4D1E1FF8BA008D6DAE /* GoalsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E321E1F35B2008D6DAE /* GoalsManager.swift */; };
+		32781FE31E25D61B0097B9A9 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */; };
+		32781FE81E25E5AD0097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
+		32781FE91E25E5B90097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,8 @@
 		14F99E431E1FF831008D6DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		14F99E451E1FF831008D6DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F99E4E1E200771008D6DAE /* 3things.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = 3things.entitlements; sourceTree = "<group>"; };
+		32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
+		32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "3things-alert.caf"; path = "Library/Sounds/3things-alert.caf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +126,7 @@
 		14F99DF81E1E7EA1008D6DAE = {
 			isa = PBXGroup;
 			children = (
+				32781FE51E25E5980097B9A9 /* Library */,
 				14F99E031E1E7EA1008D6DAE /* 3things */,
 				14F99E181E1E7EA1008D6DAE /* 3thingsTests */,
 				14F99E231E1E7EA1008D6DAE /* 3thingsUITests */,
@@ -152,6 +158,7 @@
 				14F99E0D1E1E7EA1008D6DAE /* LaunchScreen.storyboard */,
 				14F99E101E1E7EA1008D6DAE /* Info.plist */,
 				14F99E321E1F35B2008D6DAE /* GoalsManager.swift */,
+				32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */,
 			);
 			path = 3things;
 			sourceTree = "<group>";
@@ -191,6 +198,22 @@
 				14F99E451E1FF831008D6DAE /* Info.plist */,
 			);
 			path = "3things Today";
+			sourceTree = "<group>";
+		};
+		32781FE51E25E5980097B9A9 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				32781FE61E25E5A10097B9A9 /* Sounds */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		32781FE61E25E5A10097B9A9 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +361,7 @@
 			files = (
 				14F99E0F1E1E7EA1008D6DAE /* LaunchScreen.storyboard in Resources */,
 				14F99E0C1E1E7EA1008D6DAE /* Assets.xcassets in Resources */,
+				32781FE81E25E5AD0097B9A9 /* 3things-alert.caf in Resources */,
 				14F99E0A1E1E7EA1008D6DAE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32781FE91E25E5B90097B9A9 /* 3things-alert.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +398,7 @@
 			files = (
 				14F99E071E1E7EA1008D6DAE /* EntryViewController.swift in Sources */,
 				14F99E331E1F35B2008D6DAE /* GoalsManager.swift in Sources */,
+				32781FE31E25D61B0097B9A9 /* NotificationsManager.swift in Sources */,
 				14F99E051E1E7EA1008D6DAE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
