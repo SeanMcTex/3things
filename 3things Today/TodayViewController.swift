@@ -16,7 +16,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     @IBOutlet weak var goal3Label: UILabel!
     
     private let goalsManager = GoalsManager(domain: standardDomain)
-        
+    private var completionHandler: ((NCUpdateResult) -> Void)? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,21 +30,22 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
         // Dispose of any resources that can be recreated.
     }
     
-    func widgetPerformUpdate(completionHandler: ((NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        
-        completionHandler(NCUpdateResult.newData)
+    func widgetPerformUpdate(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
+        self.completionHandler = completionHandler
+        self.goalsManager.fetchGoals()
     }
     
     // MARK:- Delegate Functions
     func didReceive(goals: [Goal]) {
+        var newData = false
         for ( label, goal ) in zip( self.labelArray(), goals ) {
-            label.text = goal
+            if ( label.text != goal ) {
+                label.text = goal
+                newData = true
+            }
         }
+        
+        self.completionHandler?( newData ? NCUpdateResult.newData : NCUpdateResult.noData )
     }
     
     // MARK:- Helper Functions
