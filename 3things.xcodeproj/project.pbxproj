@@ -304,7 +304,7 @@
 					14F99E001E1E7EA1008D6DAE = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4U7FD3V45R;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -578,12 +578,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = 3things/3things.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 4U7FD3V45R;
 				INFOPLIST_FILE = 3things/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.-things";
+				PRODUCT_BUNDLE_IDENTIFIER = net.mcmains.things;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4817f067-df78-440c-a660-9f6791b609be";
+				PROVISIONING_PROFILE_SPECIFIER = "net.mcmains.things AppStore";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -594,12 +597,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = 3things/3things.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 4U7FD3V45R;
 				INFOPLIST_FILE = 3things/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.-things";
+				PRODUCT_BUNDLE_IDENTIFIER = net.mcmains.things;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4817f067-df78-440c-a660-9f6791b609be";
+				PROVISIONING_PROFILE_SPECIFIER = "net.mcmains.things AppStore";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
