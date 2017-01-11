@@ -8,8 +8,8 @@
 
 import UIKit
 
-class EntryViewController: UIViewController, GoalsManagerDelegate {
-
+class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDelegate {
+    
     public var goalsManager: GoalsManager?
     
     @IBOutlet weak var goal1Field: UITextField!
@@ -18,20 +18,19 @@ class EntryViewController: UIViewController, GoalsManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.goalsManager = GoalsManager(domain: standardDomain)
         self.goalsManager?.delegate = self
         self.goalsManager?.fetchGoals()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func didPushSetGoalsButton(_ sender: AnyObject) {
-        let goals = self.goalFields().map{ $0.text ?? "" }
-        self.goalsManager?.store(goals: goals)
+        persistGoals()
     }
     
     // MARK:- Delegate Methods
@@ -41,10 +40,35 @@ class EntryViewController: UIViewController, GoalsManagerDelegate {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case goal1Field:
+            clearAndActivate(field: goal2Field)
+        case goal2Field:
+            clearAndActivate(field: goal3Field)
+        case goal3Field:
+            persistGoals()
+            goal3Field.resignFirstResponder()
+        default:
+            break
+        }
+        return true
+    }
+    
     // MARK:- Helper Methods
     func goalFields() -> [UITextField] {
         return [goal1Field, goal2Field, goal3Field]
     }
-
+    
+    func persistGoals() {
+        let goals = self.goalFields().map{ $0.text ?? "" }
+        self.goalsManager?.store(goals: goals)
+    }
+    
+    func clearAndActivate( field: UITextField ) {
+        field.text = ""
+        field.becomeFirstResponder()
+    }
+    
 }
 
