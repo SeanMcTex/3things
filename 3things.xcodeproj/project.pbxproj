@@ -324,7 +324,7 @@
 					14F99E3A1E1FF831008D6DAE = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4U7FD3V45R;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -578,15 +578,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = 3things/3things.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4U7FD3V45R;
 				INFOPLIST_FILE = 3things/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.mcmains.things;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4817f067-df78-440c-a660-9f6791b609be";
-				PROVISIONING_PROFILE_SPECIFIER = "net.mcmains.things AppStore";
+				PROVISIONING_PROFILE = "fb177d9d-9ecb-4cc6-a832-489c2f5e81d5";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development net.mcmains.things";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -604,8 +604,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.mcmains.things;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4817f067-df78-440c-a660-9f6791b609be";
-				PROVISIONING_PROFILE_SPECIFIER = "net.mcmains.things AppStore";
+				PROVISIONING_PROFILE = "96c4cab7-675f-4437-aa0c-169e039ff392";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore net.mcmains.things";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -668,11 +668,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "3things Today/3things Today.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4U7FD3V45R;
 				INFOPLIST_FILE = "3things Today/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.-things.-things-Today";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.things.things-Today";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5e68a463-73eb-49eb-8e0b-ab14516a90d3";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development net.mcmains.things.things-Today";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -682,11 +685,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "3things Today/3things Today.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 4U7FD3V45R;
 				INFOPLIST_FILE = "3things Today/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.-things.-things-Today";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.things.things-Today";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f93961c7-9f74-4bef-a022-93f60d4afe86";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore net.mcmains.things.things-Today";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
