@@ -16,6 +16,10 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     @IBOutlet weak var goal2Field: UITextField!
     @IBOutlet weak var goal3Field: UITextField!
     
+    @IBOutlet weak var goal1CheckBox: BEMCheckBox!
+    @IBOutlet weak var goal2CheckBox: BEMCheckBox!
+    @IBOutlet weak var goal3CheckBox: BEMCheckBox!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +34,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     }
     
     @IBAction func didPushSetGoalsButton(_ sender: AnyObject) {
+        updateUIToGoalsEnteredState()
         persistGoals()
     }
     
@@ -47,8 +52,8 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         case goal2Field:
             clearAndActivate(field: goal3Field)
         case goal3Field:
+            updateUIToGoalsEnteredState()
             persistGoals()
-            goal3Field.resignFirstResponder()
         default:
             break
         }
@@ -60,9 +65,30 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         return [goal1Field, goal2Field, goal3Field]
     }
     
+    func goalCheckBoxes() -> [BEMCheckBox] {
+        return [goal1CheckBox, goal2CheckBox, goal3CheckBox]
+    }
+    
     func persistGoals() {
         let goals = self.goalFields().map{ $0.text ?? "" }
         self.goalsManager?.store(goals: goals)
+    }
+    
+    func updateUIToGoalsEnteredState() {
+        var delay = 0.0
+        for ( field, checkbox ) in zip ( goalFields(), goalCheckBoxes() ) {
+            
+            let animations = {
+                field.isEnabled = false
+                field.resignFirstResponder()
+                
+                checkbox.isHidden = false
+                checkbox.setNeedsDisplay()
+            }
+            
+            UIView.animate(withDuration: 0.3, delay: delay, options: UIViewAnimationOptions.curveEaseInOut, animations: animations, completion: nil)
+            delay = delay + 0.1
+        }
     }
     
     func clearAndActivate( field: UITextField ) {
