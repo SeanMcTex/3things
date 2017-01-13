@@ -21,6 +21,10 @@
 		14F99E441E1FF831008D6DAE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F99E421E1FF831008D6DAE /* MainInterface.storyboard */; };
 		14F99E481E1FF831008D6DAE /* 3things Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 14F99E3B1E1FF831008D6DAE /* 3things Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		14F99E4D1E1FF8BA008D6DAE /* GoalsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E321E1F35B2008D6DAE /* GoalsManager.swift */; };
+		323556DB1E2918AD00453A34 /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 323556D41E2918AD00453A34 /* BEMAnimationManager.m */; };
+		323556DC1E2918AD00453A34 /* BEMCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 323556D61E2918AD00453A34 /* BEMCheckBox.m */; };
+		323556DD1E2918AD00453A34 /* BEMCheckBoxGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 323556D81E2918AD00453A34 /* BEMCheckBoxGroup.m */; };
+		323556DE1E2918AD00453A34 /* BEMPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 323556DA1E2918AD00453A34 /* BEMPathManager.m */; };
 		32781FE31E25D61B0097B9A9 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */; };
 		32781FE81E25E5AD0097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
 		32781FE91E25E5B90097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
@@ -86,6 +90,15 @@
 		14F99E431E1FF831008D6DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		14F99E451E1FF831008D6DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F99E4E1E200771008D6DAE /* 3things.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = 3things.entitlements; sourceTree = "<group>"; };
+		323556CE1E29182300453A34 /* 3things-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "3things-Bridging-Header.h"; sourceTree = "<group>"; };
+		323556D31E2918AD00453A34 /* BEMAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEMAnimationManager.h; path = Library/BEMCheckBox/Classes/BEMAnimationManager.h; sourceTree = "<group>"; };
+		323556D41E2918AD00453A34 /* BEMAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEMAnimationManager.m; path = Library/BEMCheckBox/Classes/BEMAnimationManager.m; sourceTree = "<group>"; };
+		323556D51E2918AD00453A34 /* BEMCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEMCheckBox.h; path = Library/BEMCheckBox/Classes/BEMCheckBox.h; sourceTree = "<group>"; };
+		323556D61E2918AD00453A34 /* BEMCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEMCheckBox.m; path = Library/BEMCheckBox/Classes/BEMCheckBox.m; sourceTree = "<group>"; };
+		323556D71E2918AD00453A34 /* BEMCheckBoxGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEMCheckBoxGroup.h; path = Library/BEMCheckBox/Classes/BEMCheckBoxGroup.h; sourceTree = "<group>"; };
+		323556D81E2918AD00453A34 /* BEMCheckBoxGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEMCheckBoxGroup.m; path = Library/BEMCheckBox/Classes/BEMCheckBoxGroup.m; sourceTree = "<group>"; };
+		323556D91E2918AD00453A34 /* BEMPathManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEMPathManager.h; path = Library/BEMCheckBox/Classes/BEMPathManager.h; sourceTree = "<group>"; };
+		323556DA1E2918AD00453A34 /* BEMPathManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEMPathManager.m; path = Library/BEMCheckBox/Classes/BEMPathManager.m; sourceTree = "<group>"; };
 		32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "3things-alert.caf"; path = "Library/Sounds/3things-alert.caf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +172,7 @@
 				14F99E101E1E7EA1008D6DAE /* Info.plist */,
 				14F99E321E1F35B2008D6DAE /* GoalsManager.swift */,
 				32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */,
+				323556CE1E29182300453A34 /* 3things-Bridging-Header.h */,
 			);
 			path = 3things;
 			sourceTree = "<group>";
@@ -200,9 +214,25 @@
 			path = "3things Today";
 			sourceTree = "<group>";
 		};
+		323556D21E29184600453A34 /* BEMCheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				323556D31E2918AD00453A34 /* BEMAnimationManager.h */,
+				323556D41E2918AD00453A34 /* BEMAnimationManager.m */,
+				323556D51E2918AD00453A34 /* BEMCheckBox.h */,
+				323556D61E2918AD00453A34 /* BEMCheckBox.m */,
+				323556D71E2918AD00453A34 /* BEMCheckBoxGroup.h */,
+				323556D81E2918AD00453A34 /* BEMCheckBoxGroup.m */,
+				323556D91E2918AD00453A34 /* BEMPathManager.h */,
+				323556DA1E2918AD00453A34 /* BEMPathManager.m */,
+			);
+			name = BEMCheckBox;
+			sourceTree = "<group>";
+		};
 		32781FE51E25E5980097B9A9 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				323556D21E29184600453A34 /* BEMCheckBox */,
 				32781FE61E25E5A10097B9A9 /* Sounds */,
 			);
 			name = Library;
@@ -304,6 +334,7 @@
 					14F99E001E1E7EA1008D6DAE = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4U7FD3V45R;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -397,9 +428,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F99E071E1E7EA1008D6DAE /* EntryViewController.swift in Sources */,
+				323556DB1E2918AD00453A34 /* BEMAnimationManager.m in Sources */,
+				323556DD1E2918AD00453A34 /* BEMCheckBoxGroup.m in Sources */,
 				14F99E331E1F35B2008D6DAE /* GoalsManager.swift in Sources */,
+				323556DC1E2918AD00453A34 /* BEMCheckBox.m in Sources */,
 				32781FE31E25D61B0097B9A9 /* NotificationsManager.swift in Sources */,
 				14F99E051E1E7EA1008D6DAE /* AppDelegate.swift in Sources */,
+				323556DE1E2918AD00453A34 /* BEMPathManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +612,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = 3things/3things.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4U7FD3V45R;
@@ -587,6 +623,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "fb177d9d-9ecb-4cc6-a832-489c2f5e81d5";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development net.mcmains.things";
+				SWIFT_OBJC_BRIDGING_HEADER = "3things/3things-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -596,6 +634,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = 3things/3things.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 4U7FD3V45R;
@@ -606,6 +645,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "96c4cab7-675f-4437-aa0c-169e039ff392";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore net.mcmains.things";
+				SWIFT_OBJC_BRIDGING_HEADER = "3things/3things-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
