@@ -20,12 +20,18 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     @IBOutlet weak var goal2CheckBox: BEMCheckBox!
     @IBOutlet weak var goal3CheckBox: BEMCheckBox!
     
+    @IBOutlet weak var setGoalsButton: UIButton!
+    
+    private var isEditingActive: Bool  {
+        get {
+            return self.goal1CheckBox.isHidden
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.goalsManager = GoalsManager(domain: standardDomain)
-        self.goalsManager?.delegate = self
-        self.goalsManager?.fetchGoals()
+        configureGoalsManager()
+        configureCheckBoxes()
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,7 +40,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     }
     
     @IBAction func didPushSetGoalsButton(_ sender: AnyObject) {
-        updateUIToGoalsEnteredState()
+        toggleUIState()
         persistGoals()
     }
     
@@ -52,7 +58,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         case goal2Field:
             clearAndActivate(field: goal3Field)
         case goal3Field:
-            updateUIToGoalsEnteredState()
+            updateUIToGoalsEnteredState(animated: true)
             persistGoals()
         default:
             break
@@ -74,7 +80,15 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         self.goalsManager?.store(goals: goals)
     }
     
-    func updateUIToGoalsEnteredState() {
+    func toggleUIState() {
+        if isEditingActive {
+            updateUIToGoalsEnteredState(animated: true)
+        } else {
+            updateUIToEditingState(animated: true)
+        }
+    }
+    
+    func updateUIToGoalsEnteredState(animated: Bool) {
         var delay = 0.0
         for ( field, checkbox ) in zip ( goalFields(), goalCheckBoxes() ) {
             
@@ -83,11 +97,36 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
                 field.resignFirstResponder()
                 
                 checkbox.isHidden = false
+                checkbox.alpha = 1.0
                 checkbox.setNeedsDisplay()
             }
+            if ( animated ) {
+                UIView.animate(withDuration: 0.3, delay: delay, options: UIViewAnimationOptions.curveEaseInOut, animations: animations, completion: nil)
+                delay = delay + 0.1
+            } else {
+                animations()
+            }
+        }
+    }
+    
+    func updateUIToEditingState(animated: Bool) {
+        var delay = 0.0
+        for ( field, checkbox ) in zip ( goalFields(), goalCheckBoxes() ) {
             
-            UIView.animate(withDuration: 0.3, delay: delay, options: UIViewAnimationOptions.curveEaseInOut, animations: animations, completion: nil)
-            delay = delay + 0.1
+            let animations = {
+                field.isEnabled = true
+                
+                checkbox.isHidden = true
+                checkbox.setNeedsDisplay()
+                checkbox.alpha = 0.0
+            }
+            
+            if ( animated ) {
+                UIView.animate(withDuration: 0.3, delay: delay, options: UIViewAnimationOptions.curveEaseInOut, animations: animations, completion: nil)
+                delay = delay + 0.1
+            } else {
+                animations()
+            }
         }
     }
     
@@ -96,5 +135,17 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         field.becomeFirstResponder()
     }
     
+    func configureGoalsManager() {
+        self.goalsManager = GoalsManager(domain: standardDomain)
+        self.goalsManager?.delegate = self
+        self.goalsManager?.fetchGoals()
+    }
+    
+    func configureCheckBoxes() {
+        for checkbox in goalCheckBoxes() {
+            checkbox.onAnimationType = .fill
+            checkbox.offAnimationType = .fill
+        }
+    }
 }
 
