@@ -25,6 +25,10 @@
 		323556DC1E2918AD00453A34 /* BEMCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 323556D61E2918AD00453A34 /* BEMCheckBox.m */; };
 		323556DD1E2918AD00453A34 /* BEMCheckBoxGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 323556D81E2918AD00453A34 /* BEMCheckBoxGroup.m */; };
 		323556DE1E2918AD00453A34 /* BEMPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 323556DA1E2918AD00453A34 /* BEMPathManager.m */; };
+		323556DF1E29E04900453A34 /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 323556D41E2918AD00453A34 /* BEMAnimationManager.m */; };
+		323556E01E29E04900453A34 /* BEMCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 323556D61E2918AD00453A34 /* BEMCheckBox.m */; };
+		323556E11E29E04900453A34 /* BEMCheckBoxGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 323556D81E2918AD00453A34 /* BEMCheckBoxGroup.m */; };
+		323556E21E29E04900453A34 /* BEMPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 323556DA1E2918AD00453A34 /* BEMPathManager.m */; };
 		32781FE31E25D61B0097B9A9 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */; };
 		32781FE81E25E5AD0097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
 		32781FE91E25E5B90097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
@@ -460,7 +464,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F99E4D1E1FF8BA008D6DAE /* GoalsManager.swift in Sources */,
+				323556E21E29E04900453A34 /* BEMPathManager.m in Sources */,
 				14F99E411E1FF831008D6DAE /* TodayViewController.swift in Sources */,
+				323556DF1E29E04900453A34 /* BEMAnimationManager.m in Sources */,
+				323556E11E29E04900453A34 /* BEMCheckBoxGroup.m in Sources */,
+				323556E01E29E04900453A34 /* BEMCheckBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,6 +725,7 @@
 				PROVISIONING_PROFILE = "5e68a463-73eb-49eb-8e0b-ab14516a90d3";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development net.mcmains.things.things-Today";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "3things/3things-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -734,6 +743,7 @@
 				PROVISIONING_PROFILE = "f93961c7-9f74-4bef-a022-93f60d4afe86";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore net.mcmains.things.things-Today";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "3things/3things-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

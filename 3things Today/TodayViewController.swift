@@ -15,6 +15,10 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     @IBOutlet weak var goal2Label: UILabel!
     @IBOutlet weak var goal3Label: UILabel!
     
+    @IBOutlet weak var goal1CheckBox: BEMCheckBox!
+    @IBOutlet weak var goal2CheckBox: BEMCheckBox!
+    @IBOutlet weak var goal3CheckBox: BEMCheckBox!
+    
     private let goalsManager = GoalsManager(domain: standardDomain)
     private var completionHandler: ((NCUpdateResult) -> Void)? = nil
     
@@ -23,6 +27,11 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
         
         self.goalsManager.delegate = self
         self.goalsManager.fetchGoals()
+        
+        self.extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
+        
+        configureCheckBoxes()
+        configureGestureRecognizers()
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,10 +44,19 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
         self.goalsManager.fetchGoals()
     }
     
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        if (activeDisplayMode == NCWidgetDisplayMode.compact) {
+            self.preferredContentSize = CGSize( width: maxSize.width, height: 200)
+        }
+        else {
+            self.preferredContentSize = CGSize(width: maxSize.width, height: 200)
+        }
+    }
+    
     // MARK:- Delegate Functions
     func didReceive(goals: [Goal]) {
         var newData = false
-        for ( label, goal ) in zip( self.labelArray(), goals ) {
+        for ( label, goal ) in zip( self.goalLabels(), goals ) {
             if ( label.text != goal ) {
                 label.text = goal
                 newData = true
@@ -49,8 +67,37 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     }
     
     // MARK:- Helper Functions
-    func labelArray() -> [UILabel] {
+    func goalLabels() -> [UILabel] {
         return [goal1Label, goal2Label, goal3Label]
+    }
+    
+    func goalCheckBoxes() -> [BEMCheckBox] {
+        return [goal1CheckBox, goal2CheckBox, goal3CheckBox]
+    }
+    
+    func configureCheckBoxes() {
+        for checkbox in goalCheckBoxes() {
+            checkbox.onAnimationType = .fill
+            checkbox.offAnimationType = .fill
+        }
+    }
+    
+    func configureGestureRecognizers() {
+        for label in goalLabels() {
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
+            label.isUserInteractionEnabled = true
+            label.addGestureRecognizer(gestureRecognizer)
+        }
+    }
+    
+    func didTap( _ sender: UITapGestureRecognizer ) {
+        if let label = sender.view as? UILabel {
+            for ( thisLabel, thisCheckBox ) in zip ( goalLabels(), goalCheckBoxes() ) {
+                if label == thisLabel {
+                    thisCheckBox.setOn(!thisCheckBox.on, animated: true)
+                }
+            }
+        }
     }
     
 }
