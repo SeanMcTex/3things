@@ -47,8 +47,8 @@ class GoalsManager {
                 }
             }
             self.delegate?.didReceive(goals: goals)
+        } else {
+            self.delegate?.didReceive(goals: self.goals)
         }
-        
-        self.delegate?.didReceive(goals: self.goals)
     }
 }
