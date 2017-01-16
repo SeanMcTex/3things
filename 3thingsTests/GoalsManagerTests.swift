@@ -65,7 +65,13 @@ class GoalsManagerTests: XCTestCase, GoalsManagerDelegate {
     // MARK: - Helper Functions
     
     func sampleGoals() -> [Goal] {
-        return ["Do things", "Do other things", "Do a third thing"]
+        let goal1 = Goal(completed: false, name: "Do things")
+        let goal2 = Goal(completed: true, name: "Do other things")
+        let goal3 = Goal(completed: false, name: "Do a third thing")
+        
+        let test = goal1 == goal2
+        
+        return [goal1, goal2, goal3]
     }
     
 

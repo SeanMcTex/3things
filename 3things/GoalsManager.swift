@@ -8,7 +8,6 @@
 
 import Foundation
 
-typealias Goal = String
 public let standardDomain = "group.mcmains.net.things"
 
 
@@ -32,16 +31,24 @@ class GoalsManager {
     
     func store(goals: [Goal]) {
         self.goals = goals
-        self.userDefaults?.set(goals, forKey: goalsKey)
+        let propertyListArray = goals.map{ $0.propertyListRepresentation() }
+        self.userDefaults?.set(propertyListArray, forKey: goalsKey)
         self.userDefaults?.synchronize()
     }
     
     func fetchGoals() -> Void {
-        if let goalsArray = self.userDefaults?.array(forKey: goalsKey),
-        let goals = goalsArray as? [Goal] {
+        if let goalsPropertyListArray = self.userDefaults?.array(forKey: goalsKey)
+        {
+            let goals: [Goal] = goalsPropertyListArray.map {
+                if let dictionary = $0 as? NSDictionary {
+                    return Goal.init(propertyListRepresentation: dictionary)
+                } else {
+                    return Goal()
+                }
+            }
             self.delegate?.didReceive(goals: goals)
-        } else {
-            self.delegate?.didReceive(goals: self.goals)
         }
+        
+        self.delegate?.didReceive(goals: self.goals)
     }
 }

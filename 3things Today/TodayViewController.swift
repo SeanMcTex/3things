@@ -9,7 +9,7 @@
 import UIKit
 import NotificationCenter
 
-class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDelegate {
+class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDelegate, BEMCheckBoxDelegate {
     
     @IBOutlet weak var goal1Label: UILabel!
     @IBOutlet weak var goal2Label: UILabel!
@@ -57,12 +57,19 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     func didReceive(goals: [Goal]) {
         var newData = false
         for ( label, goal ) in zip( self.goalLabels(), goals ) {
-            if ( label.text != goal ) {
-                label.text = goal
+            if ( label.text != goal.name ) {
+                label.text = goal.name
                 newData = true
             }
         }
-        
+
+        for ( checkBox, goal ) in zip( self.goalCheckBoxes(), goals ) {
+            if ( checkBox.on != goal.completed ) {
+                checkBox.on = goal.completed
+                newData = true
+            }
+        }
+
         self.completionHandler?( newData ? NCUpdateResult.newData : NCUpdateResult.noData )
     }
     
@@ -84,13 +91,13 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     
     func configureGestureRecognizers() {
         for label in goalLabels() {
-            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTriggerGestureRecognizer(_:)))
             label.isUserInteractionEnabled = true
             label.addGestureRecognizer(gestureRecognizer)
         }
     }
     
-    func didTap( _ sender: UITapGestureRecognizer ) {
+    func didTriggerGestureRecognizer( _ sender: UITapGestureRecognizer ) {
         if let label = sender.view as? UILabel {
             for ( thisLabel, thisCheckBox ) in zip ( goalLabels(), goalCheckBoxes() ) {
                 if label == thisLabel {
@@ -99,5 +106,18 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
             }
         }
     }
+    
+    func persistGoals() {
+        let goalNames = self.goalLabels().map{ $0.text ?? "" }
+        let goalCompletions = self.goalCheckBoxes().map{ $0.on }
+        let goals = zip( goalNames, goalCompletions ).map{ Goal(completed: $0.1, name: $0.0 ) }
+        
+        self.goalsManager.store(goals: goals)
+    }
+    
+    func didTap(_ checkBox: BEMCheckBox) {
+        self.persistGoals()
+    }
+
     
 }

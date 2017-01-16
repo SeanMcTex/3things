@@ -47,9 +47,13 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     // MARK:- Delegate Methods
     func didReceive(goals: [Goal]) {
         for ( field, goal ) in zip( self.goalFields(), goals ) {
-            field.text = goal
+            field.text = goal.name
         }
-    }
+
+        for ( checkbox, goal ) in zip( self.goalCheckBoxes(), goals ) {
+            checkbox.on = goal.completed
+        }
+}
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
@@ -76,7 +80,10 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     }
     
     func persistGoals() {
-        let goals = self.goalFields().map{ $0.text ?? "" }
+        let goalNames = self.goalFields().map{ $0.text ?? "" }
+        let goalCompletions = self.goalCheckBoxes().map{ $0.on }
+        let goals = zip( goalNames, goalCompletions ).map{ Goal(completed: $0.1, name: $0.0 ) }
+       
         self.goalsManager?.store(goals: goals)
     }
     
