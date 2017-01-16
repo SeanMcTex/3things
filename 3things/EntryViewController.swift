@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDelegate {
+class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDelegate, BEMCheckBoxDelegate {
     
     public var goalsManager: GoalsManager?
     
@@ -30,8 +30,19 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureGoalsManager()
+        self.goalsManager?.fetchGoals()
+        
         configureCheckBoxes()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        registerForNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        clearNotifications()
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,11 +60,15 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         for ( field, goal ) in zip( self.goalFields(), goals ) {
             field.text = goal.name
         }
-
+        
         for ( checkbox, goal ) in zip( self.goalCheckBoxes(), goals ) {
             checkbox.on = goal.completed
         }
-}
+    }
+    
+    func didTap(_ checkBox: BEMCheckBox) {
+        self.persistGoals()
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
@@ -83,7 +98,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         let goalNames = self.goalFields().map{ $0.text ?? "" }
         let goalCompletions = self.goalCheckBoxes().map{ $0.on }
         let goals = zip( goalNames, goalCompletions ).map{ Goal(completed: $0.1, name: $0.0 ) }
-       
+        
         self.goalsManager?.store(goals: goals)
     }
     
@@ -145,7 +160,6 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     func configureGoalsManager() {
         self.goalsManager = GoalsManager(domain: standardDomain)
         self.goalsManager?.delegate = self
-        self.goalsManager?.fetchGoals()
     }
     
     func configureCheckBoxes() {
@@ -153,6 +167,22 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
             checkbox.onAnimationType = .fill
             checkbox.offAnimationType = .fill
         }
+    }
+    
+    //MARK:- Notifications
+    func registerForNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(appDidComeToForeground),
+                                               name: .UIApplicationDidBecomeActive,
+                                               object: nil)
+    }
+    
+    func appDidComeToForeground() {
+        self.goalsManager?.fetchGoals()
+    }
+    
+    func clearNotifications() {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
