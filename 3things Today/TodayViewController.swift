@@ -26,7 +26,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
         super.viewDidLoad()
         
         self.goalsManager.delegate = self
-        self.goalsManager.fetchGoals()
+        self.goalsManager.fetchGoalsAndTimestamp()
         
         self.extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
         
@@ -41,7 +41,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     
     func widgetPerformUpdate(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
         self.completionHandler = completionHandler
-        self.goalsManager.fetchGoals()
+        self.goalsManager.fetchGoalsAndTimestamp()
     }
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
@@ -53,7 +53,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     }
     
     // MARK: - Delegate Functions
-    func didReceive(goals: [Goal]) {
+    func didReceive(goals: [Goal], areGoalsCurrent: Bool) {
         var newData = false
         for ( label, goal ) in zip( self.goalLabels(), goals ) {
             if label.text != goal.name {

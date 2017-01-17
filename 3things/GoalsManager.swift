@@ -11,9 +11,11 @@ import Foundation
 public let standardDomain = "group.mcmains.net.things"
 
 private let goalsKey = "goalsKey"
+private let timestampKey = "timestampKey"
+private let oneDayAgo = TimeInterval( -86400 )
 
 protocol GoalsManagerDelegate: class {
-    func didReceive(goals: [Goal])
+    func didReceive(goals: [Goal], areGoalsCurrent: Bool)
 }
 
 class GoalsManager {
@@ -21,6 +23,7 @@ class GoalsManager {
     public let domain: String
     
     private var goals: [Goal] = []
+    private var timestamp: Date = Date().addingTimeInterval( oneDayAgo )
     private let userDefaults: UserDefaults?
     
     init(domain: String) {
@@ -28,14 +31,25 @@ class GoalsManager {
         self.userDefaults = UserDefaults(suiteName: domain)
     }
     
-    func store(goals: [Goal]) {
+    func store(goals: [Goal], timestamp: Date = Date() ) {
         self.goals = goals
+        self.timestamp = timestamp
+        
         let propertyListArray = goals.map { $0.propertyListRepresentation() }
         self.userDefaults?.set(propertyListArray, forKey: goalsKey)
+        
+        self.userDefaults?.set(timestamp, forKey: timestampKey)
         self.userDefaults?.synchronize()
     }
     
-    func fetchGoals() {
+    func fetchGoalsAndTimestamp() {
+        let goals = fetchGoals()
+        let current = areGoalsCurrent()
+        
+        self.delegate?.didReceive(goals: goals, areGoalsCurrent: current )
+    }
+    
+    private func fetchGoals() -> [Goal] {
         if let goalsPropertyListArray = self.userDefaults?.array(forKey: goalsKey) {
             let goals: [Goal] = goalsPropertyListArray.map {
                 if let dictionary = $0 as? NSDictionary {
@@ -44,9 +58,22 @@ class GoalsManager {
                     return Goal()
                 }
             }
-            self.delegate?.didReceive(goals: goals)
-        } else {
-            self.delegate?.didReceive(goals: self.goals)
+            self.goals = goals
         }
+        return self.goals
     }
+    
+    private func fetchTimestamp() -> Date {
+        if let timestamp = self.userDefaults?.object(forKey: timestampKey) as? Date {
+            self.timestamp = timestamp
+        }
+        return self.timestamp
+    }
+    
+    private func areGoalsCurrent() -> Bool {
+        let timestamp = self.fetchTimestamp()
+        
+        return Calendar.current.isDateInToday(timestamp)
+    }
+    
 }

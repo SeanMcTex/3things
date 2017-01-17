@@ -30,7 +30,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         super.viewDidLoad()
         
         configureGoalsManager()
-        self.goalsManager?.fetchGoals()
+        self.goalsManager?.fetchGoalsAndTimestamp()
         
         configureCheckBoxes()
     }
@@ -54,7 +54,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     }
     
     // MARK: - Delegate Methods
-    func didReceive(goals: [Goal]) {
+    func didReceive(goals: [Goal], areGoalsCurrent: Bool) {
         for ( field, goal ) in zip( self.goalFields(), goals ) {
             field.text = goal.name
         }
@@ -184,7 +184,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     }
     
     func appDidComeToForeground() {
-        self.goalsManager?.fetchGoals()
+        self.goalsManager?.fetchGoalsAndTimestamp()
     }
     
     func clearNotifications() {
