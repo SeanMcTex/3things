@@ -43,7 +43,8 @@ class GoalsManagerTests: XCTestCase, GoalsManagerDelegate {
     }
     
     func testRetrievalFromSecondInstance() {
-        self.asyncExpectation = self.expectation(description: "Second instance should return values stored by first instance")
+        self.asyncExpectation = self.expectation(
+            description: "Second instance should return values stored by first instance")
         
         sut!.store(goals: self.sampleGoals() )
         
@@ -68,12 +69,8 @@ class GoalsManagerTests: XCTestCase, GoalsManagerDelegate {
         let goal1 = Goal(completed: false, name: "Do things")
         let goal2 = Goal(completed: true, name: "Do other things")
         let goal3 = Goal(completed: false, name: "Do a third thing")
-        
-        let test = goal1 == goal2
-        
+                
         return [goal1, goal2, goal3]
     }
-    
-
     
 }

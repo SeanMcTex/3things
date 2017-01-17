@@ -20,7 +20,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     @IBOutlet weak var goal3CheckBox: BEMCheckBox!
     
     private let goalsManager = GoalsManager(domain: standardDomain)
-    private var completionHandler: ((NCUpdateResult) -> Void)? = nil
+    private var completionHandler: ((NCUpdateResult) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,26 +45,25 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     }
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
-        if (activeDisplayMode == NCWidgetDisplayMode.compact) {
+        if activeDisplayMode == NCWidgetDisplayMode.compact {
             self.preferredContentSize = CGSize( width: maxSize.width, height: 200)
-        }
-        else {
+        } else {
             self.preferredContentSize = CGSize(width: maxSize.width, height: 200)
         }
     }
     
-    // MARK:- Delegate Functions
+    // MARK: - Delegate Functions
     func didReceive(goals: [Goal]) {
         var newData = false
         for ( label, goal ) in zip( self.goalLabels(), goals ) {
-            if ( label.text != goal.name ) {
+            if label.text != goal.name {
                 label.text = goal.name
                 newData = true
             }
         }
 
         for ( checkBox, goal ) in zip( self.goalCheckBoxes(), goals ) {
-            if ( checkBox.on != goal.completed ) {
+            if checkBox.on != goal.completed {
                 checkBox.on = goal.completed
                 newData = true
             }
@@ -73,7 +72,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
         self.completionHandler?( newData ? NCUpdateResult.newData : NCUpdateResult.noData )
     }
     
-    // MARK:- Helper Functions
+    // MARK: - Helper Functions
     func goalLabels() -> [UILabel] {
         return [goal1Label, goal2Label, goal3Label]
     }
@@ -91,7 +90,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     
     func configureGestureRecognizers() {
         for label in goalLabels() {
-            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTriggerGestureRecognizer(_:)))
+            let gestureRecognizer = UITapGestureRecognizer(target: self,
+                                                           action: #selector(didTriggerGestureRecognizer(_:)))
             label.isUserInteractionEnabled = true
             label.addGestureRecognizer(gestureRecognizer)
         }
@@ -108,9 +108,9 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     }
     
     func persistGoals() {
-        let goalNames = self.goalLabels().map{ $0.text ?? "" }
-        let goalCompletions = self.goalCheckBoxes().map{ $0.on }
-        let goals = zip( goalNames, goalCompletions ).map{ Goal(completed: $0.1, name: $0.0 ) }
+        let goalNames = self.goalLabels().map { $0.text ?? "" }
+        let goalCompletions = self.goalCheckBoxes().map { $0.on }
+        let goals = zip( goalNames, goalCompletions ).map { Goal(completed: $0.1, name: $0.0 ) }
         
         self.goalsManager.store(goals: goals)
     }
@@ -119,5 +119,4 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
         self.persistGoals()
     }
 
-    
 }

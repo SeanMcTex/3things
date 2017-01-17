@@ -12,7 +12,7 @@
 		14F99E0A1E1E7EA1008D6DAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F99E081E1E7EA1008D6DAE /* Main.storyboard */; };
 		14F99E0C1E1E7EA1008D6DAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F99E0B1E1E7EA1008D6DAE /* Assets.xcassets */; };
 		14F99E0F1E1E7EA1008D6DAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F99E0D1E1E7EA1008D6DAE /* LaunchScreen.storyboard */; };
-		14F99E251E1E7EA1008D6DAE /* _thingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E241E1E7EA1008D6DAE /* _thingsUITests.swift */; };
+		14F99E251E1E7EA1008D6DAE /* ThingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E241E1E7EA1008D6DAE /* ThingsUITests.swift */; };
 		14F99E331E1F35B2008D6DAE /* GoalsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E321E1F35B2008D6DAE /* GoalsManager.swift */; };
 		14F99E351E1F36D9008D6DAE /* GoalsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E341E1F36D9008D6DAE /* GoalsManagerTests.swift */; };
 		14F99E361E1F38C2008D6DAE /* GoalsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E321E1F35B2008D6DAE /* GoalsManager.swift */; };
@@ -35,6 +35,7 @@
 		323556EC1E2C31C000453A34 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323556E91E2C2F3500453A34 /* Goal.swift */; };
 		323556EE1E2C31D000453A34 /* PropertyListReadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323556E71E2C2F0800453A34 /* PropertyListReadable.swift */; };
 		323556EF1E2C31E800453A34 /* PropertyListReadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323556E71E2C2F0800453A34 /* PropertyListReadable.swift */; };
+		326D66C41E2EAF8D0070090E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 326D66C31E2EAF8D0070090E /* .swiftlint.yml */; };
 		32781FE31E25D61B0097B9A9 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */; };
 		32781FE81E25E5AD0097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
 		32781FE91E25E5B90097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
@@ -90,7 +91,7 @@
 		14F99E151E1E7EA1008D6DAE /* 3thingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3thingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F99E1B1E1E7EA1008D6DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F99E201E1E7EA1008D6DAE /* 3thingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3thingsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		14F99E241E1E7EA1008D6DAE /* _thingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _thingsUITests.swift; sourceTree = "<group>"; };
+		14F99E241E1E7EA1008D6DAE /* ThingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsUITests.swift; sourceTree = "<group>"; };
 		14F99E261E1E7EA1008D6DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F99E321E1F35B2008D6DAE /* GoalsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsManager.swift; sourceTree = "<group>"; };
 		14F99E341E1F36D9008D6DAE /* GoalsManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsManagerTests.swift; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 		323556DA1E2918AD00453A34 /* BEMPathManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEMPathManager.m; path = Library/BEMCheckBox/Classes/BEMPathManager.m; sourceTree = "<group>"; };
 		323556E71E2C2F0800453A34 /* PropertyListReadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListReadable.swift; sourceTree = "<group>"; };
 		323556E91E2C2F3500453A34 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		326D66C31E2EAF8D0070090E /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "3things-alert.caf"; path = "Library/Sounds/3things-alert.caf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +160,7 @@
 				14F99E3F1E1FF831008D6DAE /* 3things Today */,
 				14F99E3C1E1FF831008D6DAE /* Frameworks */,
 				14F99E021E1E7EA1008D6DAE /* Products */,
+				326D66C31E2EAF8D0070090E /* .swiftlint.yml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,7 +205,7 @@
 		14F99E231E1E7EA1008D6DAE /* 3thingsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				14F99E241E1E7EA1008D6DAE /* _thingsUITests.swift */,
+				14F99E241E1E7EA1008D6DAE /* ThingsUITests.swift */,
 				14F99E261E1E7EA1008D6DAE /* Info.plist */,
 			);
 			path = 3thingsUITests;
@@ -275,6 +278,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14F99E291E1E7EA1008D6DAE /* Build configuration list for PBXNativeTarget "3things" */;
 			buildPhases = (
+				326D66C21E2EA4020070090E /* ShellScript */,
 				14F99DFD1E1E7EA1008D6DAE /* Sources */,
 				14F99DFE1E1E7EA1008D6DAE /* Frameworks */,
 				14F99DFF1E1E7EA1008D6DAE /* Resources */,
@@ -412,6 +416,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				326D66C41E2EAF8D0070090E /* .swiftlint.yml in Resources */,
 				14F99E0F1E1E7EA1008D6DAE /* LaunchScreen.storyboard in Resources */,
 				14F99E0C1E1E7EA1008D6DAE /* Assets.xcassets in Resources */,
 				32781FE81E25E5AD0097B9A9 /* 3things-alert.caf in Resources */,
@@ -443,6 +448,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		326D66C21E2EA4020070090E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		14F99DFD1E1E7EA1008D6DAE /* Sources */ = {
@@ -477,7 +498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14F99E251E1E7EA1008D6DAE /* _thingsUITests.swift in Sources */,
+				14F99E251E1E7EA1008D6DAE /* ThingsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

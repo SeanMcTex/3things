@@ -13,8 +13,7 @@ struct Goal: Equatable, PropertyListReadable {
     var name: String = ""
 }
 
-
-func ==(lhs: Goal, rhs: Goal) -> Bool {
+func == (lhs: Goal, rhs: Goal) -> Bool {
     return rhs.completed == lhs.completed && rhs.name == lhs.name
 }
 

@@ -10,15 +10,14 @@ import Foundation
 
 public let standardDomain = "group.mcmains.net.things"
 
-
 private let goalsKey = "goalsKey"
 
-protocol GoalsManagerDelegate {
-    func didReceive(goals:[Goal])
+protocol GoalsManagerDelegate: class {
+    func didReceive(goals: [Goal])
 }
 
 class GoalsManager {
-    public var delegate: GoalsManagerDelegate?
+    public weak var delegate: GoalsManagerDelegate?
     public let domain: String
     
     private var goals: [Goal] = []
@@ -31,14 +30,13 @@ class GoalsManager {
     
     func store(goals: [Goal]) {
         self.goals = goals
-        let propertyListArray = goals.map{ $0.propertyListRepresentation() }
+        let propertyListArray = goals.map { $0.propertyListRepresentation() }
         self.userDefaults?.set(propertyListArray, forKey: goalsKey)
         self.userDefaults?.synchronize()
     }
     
-    func fetchGoals() -> Void {
-        if let goalsPropertyListArray = self.userDefaults?.array(forKey: goalsKey)
-        {
+    func fetchGoals() {
+        if let goalsPropertyListArray = self.userDefaults?.array(forKey: goalsKey) {
             let goals: [Goal] = goalsPropertyListArray.map {
                 if let dictionary = $0 as? NSDictionary {
                     return Goal.init(propertyListRepresentation: dictionary)

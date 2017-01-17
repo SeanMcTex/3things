@@ -22,10 +22,8 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     
     @IBOutlet weak var setGoalsButton: UIButton!
     
-    private var isEditingActive: Bool  {
-        get {
-            return self.goal1CheckBox.isHidden
-        }
+    private var isEditingActive: Bool {
+        return self.goal1CheckBox.isHidden
     }
     
     override func viewDidLoad() {
@@ -55,7 +53,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         persistGoals()
     }
     
-    // MARK:- Delegate Methods
+    // MARK: - Delegate Methods
     func didReceive(goals: [Goal]) {
         for ( field, goal ) in zip( self.goalFields(), goals ) {
             field.text = goal.name
@@ -85,7 +83,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         return true
     }
     
-    // MARK:- Helper Methods
+    // MARK: - Helper Methods
     func goalFields() -> [UITextField] {
         return [goal1Field, goal2Field, goal3Field]
     }
@@ -95,9 +93,9 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     }
     
     func persistGoals() {
-        let goalNames = self.goalFields().map{ $0.text ?? "" }
-        let goalCompletions = self.goalCheckBoxes().map{ $0.on }
-        let goals = zip( goalNames, goalCompletions ).map{ Goal(completed: $0.1, name: $0.0 ) }
+        let goalNames = self.goalFields().map { $0.text ?? "" }
+        let goalCompletions = self.goalCheckBoxes().map { $0.on }
+        let goals = zip( goalNames, goalCompletions ).map { Goal(completed: $0.1, name: $0.0 ) }
         
         self.goalsManager?.store(goals: goals)
     }
@@ -122,9 +120,13 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
                 checkbox.alpha = 1.0
                 checkbox.setNeedsDisplay()
             }
-            if ( animated ) {
-                UIView.animate(withDuration: 0.3, delay: delay, options: UIViewAnimationOptions.curveEaseInOut, animations: animations, completion: nil)
-                delay = delay + 0.1
+            if animated {
+                UIView.animate(withDuration: 0.3,
+                               delay: delay,
+                               options: UIViewAnimationOptions.curveEaseInOut,
+                               animations: animations,
+                               completion: nil)
+                delay += 0.1
             } else {
                 animations()
             }
@@ -143,9 +145,13 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
                 checkbox.alpha = 0.0
             }
             
-            if ( animated ) {
-                UIView.animate(withDuration: 0.3, delay: delay, options: UIViewAnimationOptions.curveEaseInOut, animations: animations, completion: nil)
-                delay = delay + 0.1
+            if animated {
+                UIView.animate(withDuration: 0.3,
+                               delay: delay,
+                               options: UIViewAnimationOptions.curveEaseInOut,
+                               animations: animations,
+                               completion: nil)
+                delay += 0.1
             } else {
                 animations()
             }
@@ -169,7 +175,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         }
     }
     
-    //MARK:- Notifications
+    // MARK: - Notifications
     func registerForNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(appDidComeToForeground),
@@ -185,4 +191,3 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         NotificationCenter.default.removeObserver(self)
     }
 }
-

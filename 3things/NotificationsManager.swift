@@ -14,9 +14,7 @@ class NotificationsManager {
     
     func getNotificationPermissions() {
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-            // Enable or disable features based on authorization.
-        }
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in return }
     }
     
     func scheduleReminder() {
