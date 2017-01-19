@@ -62,6 +62,12 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         for ( checkbox, goal ) in zip( self.goalCheckBoxes(), goals ) {
             checkbox.on = goal.completed
         }
+        
+        if areGoalsCurrent {
+            updateUIToGoalsEnteredState(animated: false)
+        } else {
+            updateUIToEditingState(animated: false)
+        }
     }
     
     func didTap(_ checkBox: BEMCheckBox) {
@@ -102,6 +108,9 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     
     func toggleUIState() {
         if isEditingActive {
+            for checkbox in goalCheckBoxes() {
+                checkbox.on = false
+            }
             updateUIToGoalsEnteredState(animated: true)
         } else {
             updateUIToEditingState(animated: true)
@@ -123,13 +132,17 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
             if animated {
                 UIView.animate(withDuration: 0.3,
                                delay: delay,
-                               options: UIViewAnimationOptions.curveEaseInOut,
+                               options: UIViewAnimationOptions.curveEaseOut,
                                animations: animations,
                                completion: nil)
                 delay += 0.1
             } else {
                 animations()
             }
+        }
+        
+        UIView.animate(withDuration: 0.5) {
+            self.setGoalsButton.setTitle(NSLocalizedString("Revise Today's Goals", comment: ""), for: .normal)
         }
     }
     
@@ -148,13 +161,17 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
             if animated {
                 UIView.animate(withDuration: 0.3,
                                delay: delay,
-                               options: UIViewAnimationOptions.curveEaseInOut,
+                               options: UIViewAnimationOptions.curveEaseOut,
                                animations: animations,
                                completion: nil)
                 delay += 0.1
             } else {
                 animations()
             }
+        }
+        
+        UIView.animate(withDuration: 0.5) { 
+            self.setGoalsButton.setTitle(NSLocalizedString("Set Today's Goals", comment: ""), for: .normal)
         }
     }
     

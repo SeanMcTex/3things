@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iiM-Ry-i2j">
-                                <rect key="frame" x="16" y="8" width="288" height="181"/>
+                                <rect key="frame" x="16" y="8" width="288" height="367"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="L9c-Sn-STI">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="55"/>
@@ -53,7 +53,7 @@
                                                     <outlet property="delegate" destination="M4Y-Lb-cyx" id="kyR-1j-N8y"/>
                                                 </connections>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fif-Ac-6WB">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fif-Ac-6WB">
                                                 <rect key="frame" x="63" y="0.0" width="225" height="55"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                 <nil key="textColor"/>
@@ -68,7 +68,7 @@
                                         <rect key="frame" x="0.0" y="63" width="288" height="55"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4J-EQ-lfT" customClass="BEMCheckBox">
-                                                <rect key="frame" x="0.0" y="0.0" width="54.5" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="L4J-EQ-lfT" secondAttribute="height" multiplier="1:1" id="07D-yI-FaD"/>
@@ -91,8 +91,8 @@
                                                     <outlet property="delegate" destination="M4Y-Lb-cyx" id="adb-Gg-Erg"/>
                                                 </connections>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sg-u8-o6y">
-                                                <rect key="frame" x="62.5" y="0.0" width="225.5" height="55"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5sg-u8-o6y">
+                                                <rect key="frame" x="63" y="0.0" width="225" height="55"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -129,7 +129,7 @@
                                                     <outlet property="delegate" destination="M4Y-Lb-cyx" id="49m-R6-aZM"/>
                                                 </connections>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFf-N2-uMT">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lFf-N2-uMT">
                                                 <rect key="frame" x="63" y="0.0" width="225" height="55"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                 <nil key="textColor"/>
@@ -140,6 +140,22 @@
                                             <constraint firstAttribute="height" constant="55" id="BQ8-dB-oC2"/>
                                         </constraints>
                                     </stackView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have not yet set your goals for today." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaK-bx-Lbg">
+                                        <rect key="frame" x="0.0" y="189" width="288" height="129"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDt-f3-FDI">
+                                        <rect key="frame" x="0.0" y="326" width="288" height="41"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <state key="normal" title="Launch 3things">
+                                            <color key="titleColor" red="0.0" green="0.63" blue="0.69999999999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapNoGoalButton:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="zva-xr-wc8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -158,10 +174,15 @@
                     <connections>
                         <outlet property="goal1CheckBox" destination="PiX-iB-OTP" id="alD-FY-qq6"/>
                         <outlet property="goal1Label" destination="Fif-Ac-6WB" id="Sjv-cj-kDT"/>
+                        <outlet property="goal1Stack" destination="L9c-Sn-STI" id="H4R-6m-sMr"/>
                         <outlet property="goal2CheckBox" destination="L4J-EQ-lfT" id="laI-mZ-RNm"/>
                         <outlet property="goal2Label" destination="5sg-u8-o6y" id="nyG-ot-PBp"/>
+                        <outlet property="goal2Stack" destination="dxq-vg-P3H" id="3WU-js-URe"/>
                         <outlet property="goal3CheckBox" destination="j7Q-hf-94B" id="lFG-lK-FSl"/>
                         <outlet property="goal3Label" destination="lFf-N2-uMT" id="nmb-Gy-5H4"/>
+                        <outlet property="goal3Stack" destination="3YE-eY-GDJ" id="4l1-Kx-Iox"/>
+                        <outlet property="noGoalButton" destination="gDt-f3-FDI" id="dkv-5H-v23"/>
+                        <outlet property="noGoalLabel" destination="eaK-bx-Lbg" id="6V0-hu-Rt0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

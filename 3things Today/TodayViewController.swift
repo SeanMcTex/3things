@@ -19,6 +19,13 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     @IBOutlet weak var goal2CheckBox: BEMCheckBox!
     @IBOutlet weak var goal3CheckBox: BEMCheckBox!
     
+    @IBOutlet weak var goal1Stack: UIStackView!
+    @IBOutlet weak var goal2Stack: UIStackView!
+    @IBOutlet weak var goal3Stack: UIStackView!
+    
+    @IBOutlet weak var noGoalLabel: UILabel!
+    @IBOutlet weak var noGoalButton: UIButton!
+    
     private let goalsManager = GoalsManager(domain: standardDomain)
     private var completionHandler: ((NCUpdateResult) -> Void)?
     
@@ -46,7 +53,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if activeDisplayMode == NCWidgetDisplayMode.compact {
-            self.preferredContentSize = CGSize( width: maxSize.width, height: 200)
+            self.preferredContentSize = CGSize( width: maxSize.width, height: 110)
         } else {
             self.preferredContentSize = CGSize(width: maxSize.width, height: 200)
         }
@@ -61,15 +68,27 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
                 newData = true
             }
         }
-
+        
         for ( checkBox, goal ) in zip( self.goalCheckBoxes(), goals ) {
             if checkBox.on != goal.completed {
                 checkBox.on = goal.completed
                 newData = true
             }
         }
-
+        
+        self.goal1Stack.isHidden = !areGoalsCurrent
+        self.goal2Stack.isHidden = !areGoalsCurrent
+        self.goal3Stack.isHidden = !areGoalsCurrent
+        self.noGoalLabel.isHidden = areGoalsCurrent
+        self.noGoalButton.isHidden = areGoalsCurrent
+        
         self.completionHandler?( newData ? NCUpdateResult.newData : NCUpdateResult.noData )
+    }
+    
+    @IBAction func didTapNoGoalButton(_ sender: Any) {
+        if let appUrl = URL(string: "threethings://net.mcmains.things") {
+            self.extensionContext?.open(appUrl, completionHandler: nil)
+        }
     }
     
     // MARK: - Helper Functions
@@ -118,5 +137,5 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     func didTap(_ checkBox: BEMCheckBox) {
         self.persistGoals()
     }
-
+    
 }
