@@ -81,7 +81,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         case goal2Field:
             clearAndActivate(field: goal3Field)
         case goal3Field:
-            updateUIToGoalsEnteredState(animated: true)
+            toggleUIState()
             persistGoals( updatingTimestamp: true )
         default:
             break
@@ -186,6 +186,12 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         field.becomeFirstResponder()
     }
     
+    func textFieldsAreEditing() -> Bool {
+        return goalFields().reduce( false ) { (fieldsAreEditing, field) -> Bool in
+            return fieldsAreEditing || field.isFirstResponder
+        }
+    }
+    
     func configureGoalsManager() {
         self.goalsManager = GoalsManager(domain: standardDomain)
         self.goalsManager?.delegate = self
@@ -207,7 +213,9 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     }
     
     func appDidComeToForeground() {
-        self.goalsManager?.fetchGoalsAndTimestamp()
+        if !textFieldsAreEditing() {
+            self.goalsManager?.fetchGoalsAndTimestamp()
+        }
     }
     
     func clearNotifications() {
