@@ -1,1 +1,6 @@
+This is the first build I hope to submit for external testing. Current functionality:
 
+- Reminder each morning at 7:00am to enter the day's goals
+- Enter your goals for the day
+- Tick off goals as you complete them
+- Today widget that reminds you to enter goals or to mark them completed

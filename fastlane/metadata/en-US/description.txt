@@ -1,1 +1,7 @@
+3things is a tool designed to help you be more productive. By encouraging you each morning to identify the three most important goals for you to complete that day, it helps you focus on what matters, and to do it with style.
 
+Features:
+- Reminds you each morning to think about what you need to get done that day and to identify the three most important goals.
+- Today Widget keeps your goals in front of you all day and allows you to instantly tick them off as you complete them.
+- Clear, accessible, pleasant design.
+- Helpful productivity hints and encouragement.
