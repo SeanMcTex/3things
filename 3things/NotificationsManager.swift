@@ -20,6 +20,8 @@ class NotificationsManager {
     
     public func scheduleReminder( areTodaysGoalsSet: Bool ) {
         let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.removeAllDeliveredNotifications()
+        notificationCenter.removeAllPendingNotificationRequests()
         
         for reminderDate in todaysReminderDate().next(days: numberOfNotificationsToSchedule,
                                                       includeStartDate: areTodaysGoalsSet) {
