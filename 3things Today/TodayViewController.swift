@@ -124,6 +124,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
                 }
             }
         }
+        
+        self.persistGoals()
     }
     
     func persistGoals() {
