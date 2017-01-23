@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let notificationsManager = NotificationsManager()
         notificationsManager.getNotificationPermissions()
-        notificationsManager.scheduleReminder()
         
         return true
     }

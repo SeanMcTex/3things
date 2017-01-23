@@ -31,14 +31,17 @@ class GoalsManager {
         self.userDefaults = UserDefaults(suiteName: domain)
     }
     
-    func store(goals: [Goal], timestamp: Date = Date() ) {
+    func store(goals: [Goal], timestamp: Date? = nil) {
         self.goals = goals
-        self.timestamp = timestamp
         
         let propertyListArray = goals.map { $0.propertyListRepresentation() }
         self.userDefaults?.set(propertyListArray, forKey: goalsKey)
         
-        self.userDefaults?.set(timestamp, forKey: timestampKey)
+        if let timestamp = timestamp {
+            self.timestamp = timestamp
+            self.userDefaults?.set(timestamp, forKey: timestampKey)
+        }
+        
         self.userDefaults?.synchronize()
     }
     

@@ -50,7 +50,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     
     @IBAction func didPushSetGoalsButton(_ sender: AnyObject) {
         toggleUIState()
-        persistGoals()
+        persistGoals( updatingTimestamp: true )
     }
     
     // MARK: - Delegate Methods
@@ -71,7 +71,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     }
     
     func didTap(_ checkBox: BEMCheckBox) {
-        self.persistGoals()
+        self.persistGoals( updatingTimestamp: false )
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -82,7 +82,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
             clearAndActivate(field: goal3Field)
         case goal3Field:
             updateUIToGoalsEnteredState(animated: true)
-            persistGoals()
+            persistGoals( updatingTimestamp: true )
         default:
             break
         }
@@ -98,12 +98,18 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         return [goal1CheckBox, goal2CheckBox, goal3CheckBox]
     }
     
-    func persistGoals() {
+    func persistGoals( updatingTimestamp: Bool ) {
         let goalNames = self.goalFields().map { $0.text ?? "" }
         let goalCompletions = self.goalCheckBoxes().map { $0.on }
         let goals = zip( goalNames, goalCompletions ).map { Goal(completed: $0.1, name: $0.0 ) }
         
-        self.goalsManager?.store(goals: goals)
+        if updatingTimestamp {
+            self.goalsManager?.store(goals: goals, timestamp: Date() )
+        } else {
+            self.goalsManager?.store(goals: goals)
+        }
+        
+        NotificationsManager().scheduleReminder( areTodaysGoalsSet: true )
     }
     
     func toggleUIState() {
@@ -170,7 +176,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
             }
         }
         
-        UIView.animate(withDuration: 0.5) { 
+        UIView.animate(withDuration: 0.5) {
             self.setGoalsButton.setTitle(NSLocalizedString("Set Today's Goals", comment: ""), for: .normal)
         }
     }

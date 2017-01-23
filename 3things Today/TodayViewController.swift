@@ -131,7 +131,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
         let goalCompletions = self.goalCheckBoxes().map { $0.on }
         let goals = zip( goalNames, goalCompletions ).map { Goal(completed: $0.1, name: $0.0 ) }
         
-        self.goalsManager.store(goals: goals)
+        self.goalsManager.store( goals: goals )
     }
     
     func didTap(_ checkBox: BEMCheckBox) {

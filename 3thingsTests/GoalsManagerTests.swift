@@ -74,7 +74,7 @@ class GoalsManagerTests: XCTestCase, GoalsManagerDelegate {
             }
         }
         
-        sut!.store(goals: self.sampleGoals() )
+        sut!.store(goals: self.sampleGoals(), timestamp: Date() )
         sut!.fetchGoalsAndTimestamp()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
@@ -93,6 +93,25 @@ class GoalsManagerTests: XCTestCase, GoalsManagerDelegate {
         sut!.fetchGoalsAndTimestamp()
         
         self.waitForExpectations(timeout: 1.0, handler: nil)
+    }
+    
+    func testThatSavingWithoutTimestampDoesntMakeGoalsCurrent() {
+        self.asyncExpectation = self.expectation(description: "Should return stored values")
+        self.asyncCompletion = { ( goals, areGoalsCurrent ) in
+            if !areGoalsCurrent {
+                self.asyncExpectation?.fulfill()
+            }
+        }
+        
+        let yesterday = Date().addingTimeInterval( -86400.0 )
+    
+        sut!.store(goals: self.sampleGoals(), timestamp: yesterday )
+        sut!.store(goals: self.sampleGoals(), timestamp: nil )
+    
+        sut!.fetchGoalsAndTimestamp()
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+
     }
     
     // MARK: - Delegate Functions

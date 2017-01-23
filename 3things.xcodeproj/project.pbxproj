@@ -39,6 +39,9 @@
 		32781FE31E25D61B0097B9A9 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */; };
 		32781FE81E25E5AD0097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
 		32781FE91E25E5B90097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
+		32FFF1321E313BFC006554D0 /* NotificationsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FFF1311E313BFC006554D0 /* NotificationsManagerTests.swift */; };
+		32FFF1361E366EF9006554D0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FFF1351E366EF9006554D0 /* Date.swift */; };
+		32FFF1381E3674D2006554D0 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FFF1371E3674D2006554D0 /* DateExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,9 @@
 		326D66C31E2EAF8D0070090E /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "3things-alert.caf"; path = "Library/Sounds/3things-alert.caf"; sourceTree = "<group>"; };
+		32FFF1311E313BFC006554D0 /* NotificationsManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManagerTests.swift; sourceTree = "<group>"; };
+		32FFF1351E366EF9006554D0 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		32FFF1371E3674D2006554D0 /* DateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +184,7 @@
 		14F99E031E1E7EA1008D6DAE /* 3things */ = {
 			isa = PBXGroup;
 			children = (
+				32FFF1341E366EE3006554D0 /* Extensions */,
 				323556E61E2C2EF300453A34 /* Models */,
 				14F99E4E1E200771008D6DAE /* 3things.entitlements */,
 				14F99E041E1E7EA1008D6DAE /* AppDelegate.swift */,
@@ -198,6 +205,8 @@
 			children = (
 				14F99E1B1E1E7EA1008D6DAE /* Info.plist */,
 				14F99E341E1F36D9008D6DAE /* GoalsManagerTests.swift */,
+				32FFF1311E313BFC006554D0 /* NotificationsManagerTests.swift */,
+				32FFF1371E3674D2006554D0 /* DateExtensionTests.swift */,
 			);
 			path = 3thingsTests;
 			sourceTree = "<group>";
@@ -269,6 +278,14 @@
 				32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */,
 			);
 			name = Sounds;
+			sourceTree = "<group>";
+		};
+		32FFF1341E366EE3006554D0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				32FFF1351E366EF9006554D0 /* Date.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,6 +495,7 @@
 				323556DC1E2918AD00453A34 /* BEMCheckBox.m in Sources */,
 				32781FE31E25D61B0097B9A9 /* NotificationsManager.swift in Sources */,
 				14F99E051E1E7EA1008D6DAE /* AppDelegate.swift in Sources */,
+				32FFF1361E366EF9006554D0 /* Date.swift in Sources */,
 				323556EA1E2C2F3500453A34 /* Goal.swift in Sources */,
 				323556DE1E2918AD00453A34 /* BEMPathManager.m in Sources */,
 			);
@@ -488,9 +506,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F99E361E1F38C2008D6DAE /* GoalsManager.swift in Sources */,
+				32FFF1381E3674D2006554D0 /* DateExtensionTests.swift in Sources */,
 				323556EC1E2C31C000453A34 /* Goal.swift in Sources */,
 				323556EF1E2C31E800453A34 /* PropertyListReadable.swift in Sources */,
 				14F99E351E1F36D9008D6DAE /* GoalsManagerTests.swift in Sources */,
+				32FFF1321E313BFC006554D0 /* NotificationsManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +629,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = things;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -653,6 +674,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = things;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
