@@ -18,9 +18,32 @@ default_platform :ios
 platform :ios do
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
-    
-    
   end
+  
+  desc "Add new device to provisioning profile"
+  lane :add_device do
+        device_name = prompt(text: "Enter the device name: ")
+        device_udid = prompt(text: "Enter the device UDID: ")
+        device_hash = {}
+        device_hash[device_name] = device_udid
+        register_devices(
+          devices: device_hash
+        )
+      refresh_profiles
+    end
+
+    # A helper lane for refreshing provisioning profiles.
+    lane :refresh_profiles do
+      match(
+        force_for_new_devices: true,
+        app_identifier:"net.mcmains.things"
+     )
+     match(
+       force_for_new_devices: true,
+       app_identifier:"net.mcmains.things.things-Today"
+    )
+    end
+  
   
   desc "Grab provisioning profiles"
   lane :profiles do
