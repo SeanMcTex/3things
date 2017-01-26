@@ -36,7 +36,7 @@
                                         <rect key="frame" x="0.0" y="49" width="343" height="55"/>
                                         <subviews>
                                             <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urc-wR-1YP" customClass="BEMCheckBox">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="urc-wR-1YP" secondAttribute="height" multiplier="1:1" id="iGI-zD-9c0"/>
@@ -60,7 +60,8 @@
                                                 </connections>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Goal 1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="aW8-WT-kuk">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="55"/>
+                                                <rect key="frame" x="63" y="0.0" width="280" height="55"/>
+                                                <accessibility key="accessibilityConfiguration" label="goal1Field"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
@@ -79,7 +80,7 @@
                                         <rect key="frame" x="0.0" y="112" width="343" height="55"/>
                                         <subviews>
                                             <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8E-ad-8y2" customClass="BEMCheckBox">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="x8E-ad-8y2" secondAttribute="height" multiplier="1:1" id="Zhv-2a-8eA"/>
@@ -103,7 +104,8 @@
                                                 </connections>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Goal 2" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="2UK-PB-0An">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="55"/>
+                                                <rect key="frame" x="63" y="0.0" width="280" height="55"/>
+                                                <accessibility key="accessibilityConfiguration" label="goal2Field"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
@@ -120,7 +122,7 @@
                                         <rect key="frame" x="0.0" y="175" width="343" height="55"/>
                                         <subviews>
                                             <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syk-tE-F2H" customClass="BEMCheckBox">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="syk-tE-F2H" secondAttribute="height" multiplier="1:1" id="gUa-Uz-pMs"/>
@@ -144,7 +146,8 @@
                                                 </connections>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Goal 3" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="emb-Ro-gj1">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="55"/>
+                                                <rect key="frame" x="63" y="0.0" width="280" height="55"/>
+                                                <accessibility key="accessibilityConfiguration" label="goal3Field"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>

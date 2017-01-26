@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iiM-Ry-i2j">
-                                <rect key="frame" x="16" y="8" width="288" height="367"/>
+                                <rect key="frame" x="16" y="8" width="288" height="181"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="L9c-Sn-STI">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="55"/>
@@ -140,14 +140,14 @@
                                             <constraint firstAttribute="height" constant="55" id="BQ8-dB-oC2"/>
                                         </constraints>
                                     </stackView>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have not yet set your goals for today." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaK-bx-Lbg">
-                                        <rect key="frame" x="0.0" y="189" width="288" height="129"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="You have not yet set your goals for today." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaK-bx-Lbg">
+                                        <rect key="frame" x="0.0" y="185" width="288" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDt-f3-FDI">
-                                        <rect key="frame" x="0.0" y="326" width="288" height="41"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDt-f3-FDI">
+                                        <rect key="frame" x="0.0" y="185" width="288" height="0.0"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <state key="normal" title="Launch 3things">
                                             <color key="titleColor" red="0.0" green="0.63" blue="0.69999999999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

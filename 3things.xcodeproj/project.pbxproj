@@ -42,6 +42,8 @@
 		32FFF1321E313BFC006554D0 /* NotificationsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FFF1311E313BFC006554D0 /* NotificationsManagerTests.swift */; };
 		32FFF1361E366EF9006554D0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FFF1351E366EF9006554D0 /* Date.swift */; };
 		32FFF1381E3674D2006554D0 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FFF1371E3674D2006554D0 /* DateExtensionTests.swift */; };
+		32FFF1401E38F8CF006554D0 /* ThingsScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FFF13F1E38F8CF006554D0 /* ThingsScreenshots.swift */; };
+		32FFF1481E38F8F6006554D0 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FFF1471E38F8F6006554D0 /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 14F99E3A1E1FF831008D6DAE;
 			remoteInfo = "3things Today";
+		};
+		32FFF1421E38F8CF006554D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14F99DF91E1E7EA1008D6DAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14F99E001E1E7EA1008D6DAE;
+			remoteInfo = 3things;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -121,6 +130,10 @@
 		32FFF1311E313BFC006554D0 /* NotificationsManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManagerTests.swift; sourceTree = "<group>"; };
 		32FFF1351E366EF9006554D0 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		32FFF1371E3674D2006554D0 /* DateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
+		32FFF13D1E38F8CF006554D0 /* 3thingsScreenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3thingsScreenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		32FFF13F1E38F8CF006554D0 /* ThingsScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsScreenshots.swift; sourceTree = "<group>"; };
+		32FFF1411E38F8CF006554D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32FFF1471E38F8F6006554D0 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +166,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		32FFF13A1E38F8CF006554D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -164,6 +184,7 @@
 				14F99E181E1E7EA1008D6DAE /* 3thingsTests */,
 				14F99E231E1E7EA1008D6DAE /* 3thingsUITests */,
 				14F99E3F1E1FF831008D6DAE /* 3things Today */,
+				32FFF13E1E38F8CF006554D0 /* 3thingsScreenshots */,
 				14F99E3C1E1FF831008D6DAE /* Frameworks */,
 				14F99E021E1E7EA1008D6DAE /* Products */,
 				326D66C31E2EAF8D0070090E /* .swiftlint.yml */,
@@ -177,6 +198,7 @@
 				14F99E151E1E7EA1008D6DAE /* 3thingsTests.xctest */,
 				14F99E201E1E7EA1008D6DAE /* 3thingsUITests.xctest */,
 				14F99E3B1E1FF831008D6DAE /* 3things Today.appex */,
+				32FFF13D1E38F8CF006554D0 /* 3thingsScreenshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,6 +310,16 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		32FFF13E1E38F8CF006554D0 /* 3thingsScreenshots */ = {
+			isa = PBXGroup;
+			children = (
+				32FFF1471E38F8F6006554D0 /* SnapshotHelper.swift */,
+				32FFF13F1E38F8CF006554D0 /* ThingsScreenshots.swift */,
+				32FFF1411E38F8CF006554D0 /* Info.plist */,
+			);
+			path = 3thingsScreenshots;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -364,13 +396,31 @@
 			productReference = 14F99E3B1E1FF831008D6DAE /* 3things Today.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		32FFF13C1E38F8CF006554D0 /* 3thingsScreenshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32FFF1441E38F8CF006554D0 /* Build configuration list for PBXNativeTarget "3thingsScreenshots" */;
+			buildPhases = (
+				32FFF1391E38F8CF006554D0 /* Sources */,
+				32FFF13A1E38F8CF006554D0 /* Frameworks */,
+				32FFF13B1E38F8CF006554D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32FFF1431E38F8CF006554D0 /* PBXTargetDependency */,
+			);
+			name = 3thingsScreenshots;
+			productName = 3thingsScreenshots;
+			productReference = 32FFF13D1E38F8CF006554D0 /* 3thingsScreenshots.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		14F99DF91E1E7EA1008D6DAE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Sean McMains";
 				TargetAttributes = {
@@ -387,6 +437,7 @@
 					};
 					14F99E141E1E7EA1008D6DAE = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4U7FD3V45R;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 14F99E001E1E7EA1008D6DAE;
 					};
@@ -404,6 +455,12 @@
 								enabled = 1;
 							};
 						};
+					};
+					32FFF13C1E38F8CF006554D0 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4U7FD3V45R;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 14F99E001E1E7EA1008D6DAE;
 					};
 				};
 			};
@@ -424,6 +481,7 @@
 				14F99E141E1E7EA1008D6DAE /* 3thingsTests */,
 				14F99E1F1E1E7EA1008D6DAE /* 3thingsUITests */,
 				14F99E3A1E1FF831008D6DAE /* 3things Today */,
+				32FFF13C1E38F8CF006554D0 /* 3thingsScreenshots */,
 			);
 		};
 /* End PBXProject section */
@@ -461,6 +519,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F99E441E1FF831008D6DAE /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32FFF13B1E38F8CF006554D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +602,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		32FFF1391E38F8CF006554D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32FFF1401E38F8CF006554D0 /* ThingsScreenshots.swift in Sources */,
+				32FFF1481E38F8F6006554D0 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -554,6 +628,11 @@
 			isa = PBXTargetDependency;
 			target = 14F99E3A1E1FF831008D6DAE /* 3things Today */;
 			targetProxy = 14F99E461E1FF831008D6DAE /* PBXContainerItemProxy */;
+		};
+		32FFF1431E38F8CF006554D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14F99E001E1E7EA1008D6DAE /* 3things */;
+			targetProxy = 32FFF1421E38F8CF006554D0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -730,6 +809,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4U7FD3V45R;
 				INFOPLIST_FILE = 3thingsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.-thingsTests";
@@ -744,6 +825,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = 3thingsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.-thingsTests";
@@ -815,6 +898,36 @@
 			};
 			name = Release;
 		};
+		32FFF1451E38F8CF006554D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 4U7FD3V45R;
+				INFOPLIST_FILE = 3thingsScreenshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.-thingsScreenshots";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "96c4cab7-675f-4437-aa0c-169e039ff392";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = 3things;
+			};
+			name = Debug;
+		};
+		32FFF1461E38F8CF006554D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 4U7FD3V45R;
+				INFOPLIST_FILE = 3thingsScreenshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.-thingsScreenshots";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "96c4cab7-675f-4437-aa0c-169e039ff392";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = 3things;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -859,6 +972,15 @@
 			buildConfigurations = (
 				14F99E4A1E1FF831008D6DAE /* Debug */,
 				14F99E4B1E1FF831008D6DAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32FFF1441E38F8CF006554D0 /* Build configuration list for PBXNativeTarget "3thingsScreenshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32FFF1451E38F8CF006554D0 /* Debug */,
+				32FFF1461E38F8CF006554D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
