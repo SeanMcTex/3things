@@ -179,13 +179,13 @@
 		14F99DF81E1E7EA1008D6DAE = {
 			isa = PBXGroup;
 			children = (
-				32781FE51E25E5980097B9A9 /* Library */,
 				14F99E031E1E7EA1008D6DAE /* 3things */,
 				14F99E181E1E7EA1008D6DAE /* 3thingsTests */,
 				14F99E231E1E7EA1008D6DAE /* 3thingsUITests */,
 				14F99E3F1E1FF831008D6DAE /* 3things Today */,
 				32FFF13E1E38F8CF006554D0 /* 3thingsScreenshots */,
 				14F99E3C1E1FF831008D6DAE /* Frameworks */,
+				32781FE51E25E5980097B9A9 /* Library */,
 				14F99E021E1E7EA1008D6DAE /* Products */,
 				326D66C31E2EAF8D0070090E /* .swiftlint.yml */,
 			);

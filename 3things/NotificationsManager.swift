@@ -23,13 +23,14 @@ class NotificationsManager {
         notificationCenter.removeAllDeliveredNotifications()
         notificationCenter.removeAllPendingNotificationRequests()
         
-        for reminderDate in todaysReminderDate().next(days: numberOfNotificationsToSchedule,
-                                                      includeStartDate: areTodaysGoalsSet) {
+        let reminderDates = todaysReminderDate().next(days: numberOfNotificationsToSchedule,
+                                                      includeStartDate: !areTodaysGoalsSet)
+        for reminderDate in reminderDates {
             
             let content = normalNotificationContent()
             let trigger = UNCalendarNotificationTrigger(dateMatching: reminderDate.components(),
                                                         repeats: false)
-            let request = UNNotificationRequest(identifier: notificationIdentifier,
+            let request = UNNotificationRequest(identifier: notificationIdentifier + String( reminderDate.hashValue ),
                                                 content: content,
                                                 trigger: trigger)
             
@@ -43,10 +44,10 @@ class NotificationsManager {
     
     internal func normalNotificationContent() -> UNNotificationContent {
         let content = UNMutableNotificationContent()
-        content.title = NSLocalizedString("Set Today's Goals", comment: "Reminder alert title")
-        content.body = NSLocalizedString("It's time to decide what three" +
+        content.title = NSString.localizedUserNotificationString(forKey: "Set Today's Goals", arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey: "It's time to decide what three " +
             "things are most important for you to accomplish today",
-                                         comment: "Reminder alert body")
+                                                                arguments: nil)
         content.sound = UNNotificationSound(named: "3things-alert.caf")
         
         return content
@@ -67,6 +68,7 @@ class NotificationsManager {
         var dateComponents = Date().components()
         dateComponents.hour = 7
         dateComponents.minute = 0
+        dateComponents.second = 0
         
         return Calendar.current.date(from: dateComponents) ?? Date()
     }
