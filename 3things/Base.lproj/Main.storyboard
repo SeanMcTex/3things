@@ -36,7 +36,7 @@
                                         <rect key="frame" x="0.0" y="49" width="343" height="55"/>
                                         <subviews>
                                             <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urc-wR-1YP" customClass="BEMCheckBox">
-                                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="55"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="urc-wR-1YP" secondAttribute="height" multiplier="1:1" id="iGI-zD-9c0"/>
@@ -60,7 +60,7 @@
                                                 </connections>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Goal 1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="aW8-WT-kuk">
-                                                <rect key="frame" x="63" y="0.0" width="280" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="55"/>
                                                 <accessibility key="accessibilityConfiguration" label="goal1Field"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
@@ -80,7 +80,7 @@
                                         <rect key="frame" x="0.0" y="112" width="343" height="55"/>
                                         <subviews>
                                             <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8E-ad-8y2" customClass="BEMCheckBox">
-                                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="55"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="x8E-ad-8y2" secondAttribute="height" multiplier="1:1" id="Zhv-2a-8eA"/>
@@ -104,7 +104,7 @@
                                                 </connections>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Goal 2" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="2UK-PB-0An">
-                                                <rect key="frame" x="63" y="0.0" width="280" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="55"/>
                                                 <accessibility key="accessibilityConfiguration" label="goal2Field"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
@@ -122,7 +122,7 @@
                                         <rect key="frame" x="0.0" y="175" width="343" height="55"/>
                                         <subviews>
                                             <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syk-tE-F2H" customClass="BEMCheckBox">
-                                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="55"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="syk-tE-F2H" secondAttribute="height" multiplier="1:1" id="gUa-Uz-pMs"/>
@@ -146,7 +146,7 @@
                                                 </connections>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Goal 3" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="emb-Ro-gj1">
-                                                <rect key="frame" x="63" y="0.0" width="280" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="55"/>
                                                 <accessibility key="accessibilityConfiguration" label="goal3Field"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
@@ -172,12 +172,43 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQf-hs-dDv">
+                                <rect key="frame" x="16" y="529" width="343" height="130"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attribution" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ga-fw-fki">
+                                        <rect key="frame" x="20" y="88.5" width="303" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote Text. Quote Text. Quote Text. Quote Text. Quote Text. Quote Text. Quote Text. Quote Text. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRo-2P-uNJ">
+                                        <rect key="frame" x="20" y="20" width="303" height="61"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3ga-fw-fki" secondAttribute="trailing" constant="20" symbolic="YES" id="7UD-4c-cIZ"/>
+                                    <constraint firstItem="3ga-fw-fki" firstAttribute="leading" secondItem="GQf-hs-dDv" secondAttribute="leading" constant="20" symbolic="YES" id="Bhb-91-pfN"/>
+                                    <constraint firstItem="wRo-2P-uNJ" firstAttribute="top" secondItem="GQf-hs-dDv" secondAttribute="top" constant="20" symbolic="YES" id="Fkj-21-LP4"/>
+                                    <constraint firstAttribute="bottom" secondItem="3ga-fw-fki" secondAttribute="bottom" constant="20" symbolic="YES" id="js4-1m-3eh"/>
+                                    <constraint firstAttribute="trailing" secondItem="wRo-2P-uNJ" secondAttribute="trailing" constant="20" symbolic="YES" id="tYa-x1-8YL"/>
+                                    <constraint firstItem="wRo-2P-uNJ" firstAttribute="leading" secondItem="GQf-hs-dDv" secondAttribute="leading" constant="20" symbolic="YES" id="u1e-qS-16c"/>
+                                    <constraint firstItem="3ga-fw-fki" firstAttribute="top" secondItem="wRo-2P-uNJ" secondAttribute="bottom" constant="8" symbolic="YES" id="vyS-nL-k6h"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="GQf-hs-dDv" secondAttribute="trailing" id="4Pb-O9-CU4"/>
                             <constraint firstItem="7S0-bq-5eX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="HKJ-MC-dZW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GQf-hs-dDv" secondAttribute="bottom" constant="8" symbolic="YES" id="Sph-VD-Et7"/>
+                            <constraint firstItem="GQf-hs-dDv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="UOf-Tk-Hqb"/>
                             <constraint firstItem="7S0-bq-5eX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VVV-qm-BtG"/>
                             <constraint firstItem="7S0-bq-5eX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YaB-dc-zL0"/>
+                            <constraint firstItem="GQf-hs-dDv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7S0-bq-5eX" secondAttribute="bottom" constant="8" symbolic="YES" id="ygs-EN-ofT"/>
                         </constraints>
                     </view>
                     <connections>
@@ -187,6 +218,8 @@
                         <outlet property="goal2Field" destination="2UK-PB-0An" id="twp-zR-diH"/>
                         <outlet property="goal3CheckBox" destination="syk-tE-F2H" id="QSm-dO-L1i"/>
                         <outlet property="goal3Field" destination="emb-Ro-gj1" id="D08-Xe-7f1"/>
+                        <outlet property="quoteAttributionLabel" destination="3ga-fw-fki" id="Jy6-hL-TK6"/>
+                        <outlet property="quoteTextLabel" destination="wRo-2P-uNJ" id="jnR-v1-Qiy"/>
                         <outlet property="setGoalsButton" destination="Idn-lg-O92" id="k0R-IE-jc1"/>
                     </connections>
                 </viewController>

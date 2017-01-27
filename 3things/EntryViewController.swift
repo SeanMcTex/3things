@@ -11,6 +11,7 @@ import UIKit
 class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDelegate, BEMCheckBoxDelegate {
     
     public var goalsManager: GoalsManager?
+    public var quotesManager: QuotesManager?
     
     @IBOutlet weak var goal1Field: UITextField!
     @IBOutlet weak var goal2Field: UITextField!
@@ -22,6 +23,9 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     
     @IBOutlet weak var setGoalsButton: UIButton!
     
+    @IBOutlet weak var quoteTextLabel: UILabel!
+    @IBOutlet weak var quoteAttributionLabel: UILabel!
+    
     private var isEditingActive: Bool {
         return self.goal1CheckBox.isHidden
     }
@@ -32,6 +36,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         configureGoalsManager()
         self.goalsManager?.fetchGoalsAndTimestamp()
         
+        configureQuotes()
         configureCheckBoxes()
     }
     
@@ -201,6 +206,14 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         for checkbox in goalCheckBoxes() {
             checkbox.onAnimationType = .fill
             checkbox.offAnimationType = .fill
+        }
+    }
+    
+    func configureQuotes() {
+        self.quotesManager = QuotesManager()
+        if let quote = self.quotesManager?.randomQuote() {
+            self.quoteTextLabel.text = quote.text
+            self.quoteAttributionLabel.text = quote.attribution
         }
     }
     

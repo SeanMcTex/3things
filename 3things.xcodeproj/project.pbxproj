@@ -35,6 +35,11 @@
 		323556EC1E2C31C000453A34 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323556E91E2C2F3500453A34 /* Goal.swift */; };
 		323556EE1E2C31D000453A34 /* PropertyListReadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323556E71E2C2F0800453A34 /* PropertyListReadable.swift */; };
 		323556EF1E2C31E800453A34 /* PropertyListReadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323556E71E2C2F0800453A34 /* PropertyListReadable.swift */; };
+		326C75A21E3B9E6B00278758 /* ProductivityQuotes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 326C75A11E3B9E6B00278758 /* ProductivityQuotes.plist */; };
+		326C75A41E3BAB8800278758 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326C75A31E3BAB8800278758 /* Quote.swift */; };
+		326C75A71E3BAE9900278758 /* QuotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326C75A61E3BAE9900278758 /* QuotesManager.swift */; };
+		326C75A91E3BB23A00278758 /* QuotesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326C75A81E3BB23A00278758 /* QuotesManagerTests.swift */; };
+		326C75AB1E3BB39600278758 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326C75AA1E3BB39600278758 /* Array.swift */; };
 		326D66C41E2EAF8D0070090E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 326D66C31E2EAF8D0070090E /* .swiftlint.yml */; };
 		32781FE31E25D61B0097B9A9 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */; };
 		32781FE81E25E5AD0097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
@@ -124,6 +129,11 @@
 		323556DA1E2918AD00453A34 /* BEMPathManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEMPathManager.m; path = Library/BEMCheckBox/Classes/BEMPathManager.m; sourceTree = "<group>"; };
 		323556E71E2C2F0800453A34 /* PropertyListReadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListReadable.swift; sourceTree = "<group>"; };
 		323556E91E2C2F3500453A34 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		326C75A11E3B9E6B00278758 /* ProductivityQuotes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProductivityQuotes.plist; sourceTree = "<group>"; };
+		326C75A31E3BAB8800278758 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		326C75A61E3BAE9900278758 /* QuotesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesManager.swift; sourceTree = "<group>"; };
+		326C75A81E3BB23A00278758 /* QuotesManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesManagerTests.swift; sourceTree = "<group>"; };
+		326C75AA1E3BB39600278758 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		326D66C31E2EAF8D0070090E /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "3things-alert.caf"; path = "Library/Sounds/3things-alert.caf"; sourceTree = "<group>"; };
@@ -208,6 +218,7 @@
 			children = (
 				32FFF1341E366EE3006554D0 /* Extensions */,
 				323556E61E2C2EF300453A34 /* Models */,
+				326C75A51E3BACCD00278758 /* Managers */,
 				14F99E4E1E200771008D6DAE /* 3things.entitlements */,
 				14F99E041E1E7EA1008D6DAE /* AppDelegate.swift */,
 				14F99E061E1E7EA1008D6DAE /* EntryViewController.swift */,
@@ -215,9 +226,8 @@
 				14F99E0B1E1E7EA1008D6DAE /* Assets.xcassets */,
 				14F99E0D1E1E7EA1008D6DAE /* LaunchScreen.storyboard */,
 				14F99E101E1E7EA1008D6DAE /* Info.plist */,
-				14F99E321E1F35B2008D6DAE /* GoalsManager.swift */,
-				32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */,
 				323556CE1E29182300453A34 /* 3things-Bridging-Header.h */,
+				326C75A11E3B9E6B00278758 /* ProductivityQuotes.plist */,
 			);
 			path = 3things;
 			sourceTree = "<group>";
@@ -229,6 +239,7 @@
 				14F99E341E1F36D9008D6DAE /* GoalsManagerTests.swift */,
 				32FFF1311E313BFC006554D0 /* NotificationsManagerTests.swift */,
 				32FFF1371E3674D2006554D0 /* DateExtensionTests.swift */,
+				326C75A81E3BB23A00278758 /* QuotesManagerTests.swift */,
 			);
 			path = 3thingsTests;
 			sourceTree = "<group>";
@@ -281,8 +292,19 @@
 			children = (
 				323556E71E2C2F0800453A34 /* PropertyListReadable.swift */,
 				323556E91E2C2F3500453A34 /* Goal.swift */,
+				326C75A31E3BAB8800278758 /* Quote.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		326C75A51E3BACCD00278758 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				14F99E321E1F35B2008D6DAE /* GoalsManager.swift */,
+				32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */,
+				326C75A61E3BAE9900278758 /* QuotesManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		32781FE51E25E5980097B9A9 /* Library */ = {
@@ -306,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				32FFF1351E366EF9006554D0 /* Date.swift */,
+				326C75AA1E3BB39600278758 /* Array.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -494,6 +517,7 @@
 				326D66C41E2EAF8D0070090E /* .swiftlint.yml in Resources */,
 				14F99E0F1E1E7EA1008D6DAE /* LaunchScreen.storyboard in Resources */,
 				14F99E0C1E1E7EA1008D6DAE /* Assets.xcassets in Resources */,
+				326C75A21E3B9E6B00278758 /* ProductivityQuotes.plist in Resources */,
 				32781FE81E25E5AD0097B9A9 /* 3things-alert.caf in Resources */,
 				14F99E0A1E1E7EA1008D6DAE /* Main.storyboard in Resources */,
 			);
@@ -556,9 +580,12 @@
 				323556E81E2C2F0800453A34 /* PropertyListReadable.swift in Sources */,
 				323556DB1E2918AD00453A34 /* BEMAnimationManager.m in Sources */,
 				323556DD1E2918AD00453A34 /* BEMCheckBoxGroup.m in Sources */,
+				326C75A41E3BAB8800278758 /* Quote.swift in Sources */,
 				14F99E331E1F35B2008D6DAE /* GoalsManager.swift in Sources */,
+				326C75A71E3BAE9900278758 /* QuotesManager.swift in Sources */,
 				323556DC1E2918AD00453A34 /* BEMCheckBox.m in Sources */,
 				32781FE31E25D61B0097B9A9 /* NotificationsManager.swift in Sources */,
+				326C75AB1E3BB39600278758 /* Array.swift in Sources */,
 				14F99E051E1E7EA1008D6DAE /* AppDelegate.swift in Sources */,
 				32FFF1361E366EF9006554D0 /* Date.swift in Sources */,
 				323556EA1E2C2F3500453A34 /* Goal.swift in Sources */,
@@ -570,6 +597,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				326C75A91E3BB23A00278758 /* QuotesManagerTests.swift in Sources */,
 				14F99E361E1F38C2008D6DAE /* GoalsManager.swift in Sources */,
 				32FFF1381E3674D2006554D0 /* DateExtensionTests.swift in Sources */,
 				323556EC1E2C31C000453A34 /* Goal.swift in Sources */,
