@@ -74,6 +74,9 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
                 checkBox.on = goal.completed
                 newData = true
             }
+            
+            let format = NSLocalizedString("%@ checkbox", comment: "accessibility label for checkbox")
+            checkBox.accessibilityLabel = String(format: format , goal.name)
         }
         
         self.goal1Stack.isHidden = !areGoalsCurrent

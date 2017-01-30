@@ -134,10 +134,14 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
             
             let animations = {
                 field.isEnabled = false
+                field.isAccessibilityElement = false
+                field.isUserInteractionEnabled = false
                 field.resignFirstResponder()
                 
                 checkbox.isHidden = false
                 checkbox.alpha = 1.0
+                let format = NSLocalizedString("%@ checkbox", comment: "accessibility label for checkbox")
+                checkbox.accessibilityLabel = String(format: format, ( field.text ?? "Goal" ) )
                 checkbox.setNeedsDisplay()
             }
             if animated {
@@ -163,6 +167,8 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
             
             let animations = {
                 field.isEnabled = true
+                field.isAccessibilityElement = true
+                field.isUserInteractionEnabled = true
                 
                 checkbox.isHidden = true
                 checkbox.setNeedsDisplay()

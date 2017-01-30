@@ -82,6 +82,8 @@
     [self initAnimationManager];
     
     [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapCheckBox:)]];
+    
+    self.accessibilityHint = NSLocalizedString(@"Double-tap to toggle", @"CheckBox accessibility hint");
 }
 
 - (void)initPathManager {
@@ -128,6 +130,7 @@
         if (animated) {
             [self addOnAnimation];
         }
+        self.accessibilityValue = NSLocalizedString(@"Complete", @"Checkbox completed");
     } else {
         if (animated) {
             [self addOffAnimation];
@@ -135,6 +138,7 @@
             [self.onBoxLayer removeFromSuperlayer];
             [self.checkMarkLayer removeFromSuperlayer];
         }
+        self.accessibilityValue = NSLocalizedString(@"Pending", @"Checkbox pending");
     }
     
     if(notifyGroup){
