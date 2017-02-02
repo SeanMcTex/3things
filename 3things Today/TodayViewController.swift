@@ -29,6 +29,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     private let goalsManager = GoalsManager(domain: standardDomain)
     private var completionHandler: ((NCUpdateResult) -> Void)?
     
+    private let audioManager = AudioManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,7 +78,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
             }
             
             let format = NSLocalizedString("%@ checkbox", comment: "accessibility label for checkbox")
-            checkBox.accessibilityLabel = String(format: format , goal.name)
+            checkBox.accessibilityLabel = String(format: format, goal.name)
         }
         
         self.goal1Stack.isHidden = !areGoalsCurrent
@@ -140,6 +142,11 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     }
     
     func didTap(_ checkBox: BEMCheckBox) {
+        if checkBox.on {
+            self.audioManager.play( sound: .on )
+        } else {
+            self.audioManager.play( sound: .off )
+        }
         self.persistGoals()
     }
     

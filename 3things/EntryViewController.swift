@@ -26,6 +26,8 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     @IBOutlet weak var quoteTextLabel: UILabel!
     @IBOutlet weak var quoteAttributionLabel: UILabel!
     
+    private let audioManager = AudioManager()
+    
     private var isEditingActive: Bool {
         return self.goal1CheckBox.isHidden
     }
@@ -76,6 +78,11 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     }
     
     func didTap(_ checkBox: BEMCheckBox) {
+        if checkBox.on {
+            self.audioManager.play( sound: .on )
+        } else {
+            self.audioManager.play( sound: .off )
+        }
         self.persistGoals( updatingTimestamp: false )
     }
     

@@ -21,6 +21,11 @@
 		14F99E441E1FF831008D6DAE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F99E421E1FF831008D6DAE /* MainInterface.storyboard */; };
 		14F99E481E1FF831008D6DAE /* 3things Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 14F99E3B1E1FF831008D6DAE /* 3things Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		14F99E4D1E1FF8BA008D6DAE /* GoalsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E321E1F35B2008D6DAE /* GoalsManager.swift */; };
+		32220FD61E40419400619C0C /* CheckOff.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32220FD41E40419400619C0C /* CheckOff.caf */; };
+		32220FD71E40419400619C0C /* CheckOn.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32220FD51E40419400619C0C /* CheckOn.caf */; };
+		32220FD81E40419B00619C0C /* CheckOff.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32220FD41E40419400619C0C /* CheckOff.caf */; };
+		32220FD91E40419B00619C0C /* CheckOn.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32220FD51E40419400619C0C /* CheckOn.caf */; };
+		32220FDB1E42DC6800619C0C /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32220FDA1E42DC6800619C0C /* AudioManager.swift */; };
 		323556DB1E2918AD00453A34 /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 323556D41E2918AD00453A34 /* BEMAnimationManager.m */; };
 		323556DC1E2918AD00453A34 /* BEMCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 323556D61E2918AD00453A34 /* BEMCheckBox.m */; };
 		323556DD1E2918AD00453A34 /* BEMCheckBoxGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 323556D81E2918AD00453A34 /* BEMCheckBoxGroup.m */; };
@@ -44,6 +49,7 @@
 		32781FE31E25D61B0097B9A9 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */; };
 		32781FE81E25E5AD0097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
 		32781FE91E25E5B90097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
+		32F883921E43BA5F0011EF4B /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32220FDA1E42DC6800619C0C /* AudioManager.swift */; };
 		32FFF1321E313BFC006554D0 /* NotificationsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FFF1311E313BFC006554D0 /* NotificationsManagerTests.swift */; };
 		32FFF1361E366EF9006554D0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FFF1351E366EF9006554D0 /* Date.swift */; };
 		32FFF1381E3674D2006554D0 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FFF1371E3674D2006554D0 /* DateExtensionTests.swift */; };
@@ -118,6 +124,9 @@
 		14F99E431E1FF831008D6DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		14F99E451E1FF831008D6DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F99E4E1E200771008D6DAE /* 3things.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = 3things.entitlements; sourceTree = "<group>"; };
+		32220FD41E40419400619C0C /* CheckOff.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CheckOff.caf; path = Library/Sounds/CheckOff.caf; sourceTree = "<group>"; };
+		32220FD51E40419400619C0C /* CheckOn.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CheckOn.caf; path = Library/Sounds/CheckOn.caf; sourceTree = "<group>"; };
+		32220FDA1E42DC6800619C0C /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		323556CE1E29182300453A34 /* 3things-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "3things-Bridging-Header.h"; sourceTree = "<group>"; };
 		323556D31E2918AD00453A34 /* BEMAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEMAnimationManager.h; path = Library/BEMCheckBox/Classes/BEMAnimationManager.h; sourceTree = "<group>"; };
 		323556D41E2918AD00453A34 /* BEMAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEMAnimationManager.m; path = Library/BEMCheckBox/Classes/BEMAnimationManager.m; sourceTree = "<group>"; };
@@ -303,6 +312,7 @@
 				14F99E321E1F35B2008D6DAE /* GoalsManager.swift */,
 				32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */,
 				326C75A61E3BAE9900278758 /* QuotesManager.swift */,
+				32220FDA1E42DC6800619C0C /* AudioManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -319,6 +329,8 @@
 		32781FE61E25E5A10097B9A9 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				32220FD41E40419400619C0C /* CheckOff.caf */,
+				32220FD51E40419400619C0C /* CheckOn.caf */,
 				32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */,
 			);
 			name = Sounds;
@@ -519,6 +531,8 @@
 				14F99E0C1E1E7EA1008D6DAE /* Assets.xcassets in Resources */,
 				326C75A21E3B9E6B00278758 /* ProductivityQuotes.plist in Resources */,
 				32781FE81E25E5AD0097B9A9 /* 3things-alert.caf in Resources */,
+				32220FD61E40419400619C0C /* CheckOff.caf in Resources */,
+				32220FD71E40419400619C0C /* CheckOn.caf in Resources */,
 				14F99E0A1E1E7EA1008D6DAE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,6 +557,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F99E441E1FF831008D6DAE /* MainInterface.storyboard in Resources */,
+				32220FD81E40419B00619C0C /* CheckOff.caf in Resources */,
+				32220FD91E40419B00619C0C /* CheckOn.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +595,7 @@
 				14F99E071E1E7EA1008D6DAE /* EntryViewController.swift in Sources */,
 				323556E81E2C2F0800453A34 /* PropertyListReadable.swift in Sources */,
 				323556DB1E2918AD00453A34 /* BEMAnimationManager.m in Sources */,
+				32220FDB1E42DC6800619C0C /* AudioManager.swift in Sources */,
 				323556DD1E2918AD00453A34 /* BEMCheckBoxGroup.m in Sources */,
 				326C75A41E3BAB8800278758 /* Quote.swift in Sources */,
 				14F99E331E1F35B2008D6DAE /* GoalsManager.swift in Sources */,
@@ -625,6 +642,7 @@
 				323556DF1E29E04900453A34 /* BEMAnimationManager.m in Sources */,
 				323556E11E29E04900453A34 /* BEMCheckBoxGroup.m in Sources */,
 				323556E01E29E04900453A34 /* BEMCheckBox.m in Sources */,
+				32F883921E43BA5F0011EF4B /* AudioManager.swift in Sources */,
 				323556EE1E2C31D000453A34 /* PropertyListReadable.swift in Sources */,
 				323556EB1E2C31BF00453A34 /* Goal.swift in Sources */,
 			);
