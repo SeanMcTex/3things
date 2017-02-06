@@ -126,6 +126,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
             for ( thisLabel, thisCheckBox ) in zip ( goalLabels(), goalCheckBoxes() ) {
                 if label == thisLabel {
                     thisCheckBox.setOn(!thisCheckBox.on, animated: true)
+                    playSound(for: thisCheckBox)
                 }
             }
         }
@@ -142,12 +143,17 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     }
     
     func didTap(_ checkBox: BEMCheckBox) {
+        playSound(for: checkBox)
+        self.persistGoals()
+    }
+    
+    func playSound(for checkBox: BEMCheckBox) {
         if checkBox.on {
             self.audioManager.play( sound: .on )
         } else {
             self.audioManager.play( sound: .off )
         }
-        self.persistGoals()
+
     }
     
 }
