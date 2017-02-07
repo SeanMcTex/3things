@@ -8,7 +8,8 @@
 
 import UIKit
 
-class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDelegate, BEMCheckBoxDelegate {
+class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDelegate,
+    BEMCheckBoxDelegate, OnboardingManagerDelegate {
     
     public var goalsManager: GoalsManager?
     public var quotesManager: QuotesManager?
@@ -26,7 +27,28 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     @IBOutlet weak var quoteTextLabel: UILabel!
     @IBOutlet weak var quoteAttributionLabel: UILabel!
     
-    private let audioManager = AudioManager()
+    // swiftlint:disable force_cast
+    private let audioManager: AudioManager = {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        return delegate.extensionScopeFactory.audioManager()
+    }()
+    
+    private let onboardingManager: OnboardingManager = {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let onboardingManager = delegate.appScopeFactory.onboardingManager()
+        return onboardingManager
+    }()
+    
+    private let notificationsManager: NotificationsManager = {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        return delegate.appScopeFactory.notificationsManager()
+    }()
+    
+    private let preferencesManager: PreferencesManager = {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        return delegate.extensionScopeFactory.preferencesManager()
+    }()
+    // swiftlint:enable force_cast
     
     private var isEditingActive: Bool {
         return self.goal1CheckBox.isHidden
@@ -40,10 +62,13 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         
         configureQuotes()
         configureCheckBoxes()
+        
+        onboardingManager.delegate = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         registerForNotifications()
+        self.onboardingManager.presentAlertIfNeeded( self )
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -101,6 +126,11 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         return true
     }
     
+    func didReceiveReminderRequest() {
+        registerForNotifications()
+        scheduleNotificationsIfWeHaveAsked()
+    }
+    
     // MARK: - Helper Methods
     func goalFields() -> [UITextField] {
         return [goal1Field, goal2Field, goal3Field]
@@ -121,7 +151,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
             self.goalsManager?.store(goals: goals)
         }
         
-        NotificationsManager().scheduleReminder( areTodaysGoalsSet: true )
+        scheduleNotificationsIfWeHaveAsked()
     }
     
     func toggleUIState() {
@@ -130,6 +160,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
                 checkbox.on = false
             }
             updateUIToGoalsEnteredState(animated: true)
+            self.onboardingManager.presentAlertIfNeeded( self )
         } else {
             updateUIToEditingState(animated: true)
         }
@@ -246,5 +277,11 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     
     func clearNotifications() {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func scheduleNotificationsIfWeHaveAsked() {
+        if self.preferencesManager.hasAcceptedNotifications {
+            self.notificationsManager.scheduleReminder( areTodaysGoalsSet: true )
+        }
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import _things
 
 private let testDomain = "TestDomain"
 

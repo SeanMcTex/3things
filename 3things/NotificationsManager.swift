@@ -19,6 +19,8 @@ class NotificationsManager {
     }
     
     public func scheduleReminder( areTodaysGoalsSet: Bool ) {
+        getNotificationPermissions()
+        
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.removeAllDeliveredNotifications()
         notificationCenter.removeAllPendingNotificationRequests()
