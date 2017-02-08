@@ -4,6 +4,30 @@
 <array>
 	<dict>
 		<key>quote</key>
+		<string>If we attend continually and promptly to the little that we can do, we shall ere long be surprised to find how little remains that we cannot do.</string>
+		<key>attribution</key>
+		<string>Samuel Butler</string>
+	</dict>
+	<dict>
+		<key>quote</key>
+		<string>On every level of life, from housework to heights of prayer, in all judgment and efforts to get things done, hurry and impatience are sure marks of the amateur.</string>
+		<key>attribution</key>
+		<string>Evelyn Underhill</string>
+	</dict>
+	<dict>
+		<key>quote</key>
+		<string>Hofstadter&apos;s Law: It always takes longer than you expect, even when you take into account Hofstadter&apos;s Law.</string>
+		<key>attribution</key>
+		<string>Douglas Hofstadter</string>
+	</dict>
+	<dict>
+		<key>quote</key>
+		<string>Simplicity boils down to two steps: Identify the essential. Eliminate the rest.</string>
+		<key>attribution</key>
+		<string>Leo Babauta</string>
+	</dict>
+	<dict>
+		<key>quote</key>
 		<string>Reading is to the mind what exercise is to the body.</string>
 		<key>attribution</key>
 		<string>Joseph Addison</string>
@@ -85,6 +109,36 @@
 		<string>If you’re always starting interesting projects and not finishing, then no matter how hard you work, you’re just busy, not productive.</string>
 		<key>attribution</key>
 		<string>Jack Simpson</string>
+	</dict>
+	<dict>
+		<key>quote</key>
+		<string>Productivity is never an accident. It is always the result of a commitment to excellence, intelligent planning, and focused effort.</string>
+		<key>attribution</key>
+		<string>Paul J. Meyer</string>
+	</dict>
+	<dict>
+		<key>quote</key>
+		<string>Stressing output is the key to improving productivity, while looking to increase activity can result in just the opposite.</string>
+		<key>attribution</key>
+		<string>Paul Gauguin</string>
+	</dict>
+	<dict>
+		<key>quote</key>
+		<string>Each minute is a little thing, and yet, with respect to our personal productivity, to manage the minute is the secret of success. </string>
+		<key>attribution</key>
+		<string>Joseph B. Wirthlin</string>
+	</dict>
+	<dict>
+		<key>quote</key>
+		<string>Amateurs sit and wait for inspiration, the rest of us just get up and go to work.</string>
+		<key>attribution</key>
+		<string>Stephen King</string>
+	</dict>
+	<dict>
+		<key>quote</key>
+		<string>Whenever you are asked if you can do a job, tell &apos;em, &apos;Certainly I can!&apos; Then get busy and find out how to do it.</string>
+		<key>attribution</key>
+		<string>Theodore Roosevelt</string>
 	</dict>
 </array>
 </plist>
