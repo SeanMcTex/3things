@@ -9,7 +9,7 @@
 import UIKit
 
 class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDelegate,
-    BEMCheckBoxDelegate, OnboardingManagerDelegate {
+BEMCheckBoxDelegate, OnboardingManagerDelegate {
     
     public var goalsManager: GoalsManager?
     public var quotesManager: QuotesManager?
@@ -23,6 +23,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     @IBOutlet weak var goal3CheckBox: BEMCheckBox!
     
     @IBOutlet weak var setGoalsButton: UIButton!
+    @IBOutlet weak var shareGoalsButton: UIButton!
     
     @IBOutlet weak var quoteTextLabel: UILabel!
     @IBOutlet weak var quoteAttributionLabel: UILabel!
@@ -47,6 +48,11 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     private let preferencesManager: PreferencesManager = {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         return delegate.extensionScopeFactory.preferencesManager()
+    }()
+    
+    private let sharingManager: SharingManager = {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        return delegate.appScopeFactory.sharingManager()
     }()
     // swiftlint:enable force_cast
     
@@ -80,9 +86,13 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didPushSetGoalsButton(_ sender: AnyObject) {
+    @IBAction func didTapSetGoalsButton(_ sender: AnyObject) {
         toggleUIState()
         persistGoals( updatingTimestamp: true )
+    }
+    
+    @IBAction func didTapShareGoalsButton(_ sender: Any) {
+        self.sharingManager.share(goals: goalsFromUI(), in: self)
     }
     
     // MARK: - Delegate Methods
@@ -141,9 +151,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
     }
     
     func persistGoals( updatingTimestamp: Bool ) {
-        let goalNames = self.goalFields().map { $0.text ?? "" }
-        let goalCompletions = self.goalCheckBoxes().map { $0.on }
-        let goals = zip( goalNames, goalCompletions ).map { Goal(completed: $0.1, name: $0.0 ) }
+        let goals = goalsFromUI()
         
         if updatingTimestamp {
             self.goalsManager?.store(goals: goals, timestamp: Date() )
@@ -152,6 +160,13 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         }
         
         scheduleNotificationsIfWeHaveAsked()
+    }
+    
+    func goalsFromUI() -> [Goal] {
+        let goalNames = self.goalFields().map { $0.text ?? "" }
+        let goalCompletions = self.goalCheckBoxes().map { $0.on }
+        let goals = zip( goalNames, goalCompletions ).map { Goal(completed: $0.1, name: $0.0 ) }
+        return goals
     }
     
     func toggleUIState() {
@@ -196,6 +211,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         
         UIView.animate(withDuration: 0.5) {
             self.setGoalsButton.setTitle(NSLocalizedString("Revise Today's Goals", comment: ""), for: .normal)
+            self.shareGoalsButton.alpha = 1.0
         }
     }
     
@@ -227,6 +243,7 @@ class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDe
         
         UIView.animate(withDuration: 0.5) {
             self.setGoalsButton.setTitle(NSLocalizedString("Set Today's Goals", comment: ""), for: .normal)
+            self.shareGoalsButton.alpha = 0.0
         }
     }
     

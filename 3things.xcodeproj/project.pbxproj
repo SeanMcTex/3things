@@ -47,6 +47,7 @@
 		32781FE31E25D61B0097B9A9 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */; };
 		32781FE81E25E5AD0097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
 		32781FE91E25E5B90097B9A9 /* 3things-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */; };
+		32A3062F1E4B84370010D2AC /* SharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A3062E1E4B84370010D2AC /* SharingManager.swift */; };
 		32F883921E43BA5F0011EF4B /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32220FDA1E42DC6800619C0C /* AudioManager.swift */; };
 		32F883941E49380A0011EF4B /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F883931E49380A0011EF4B /* OnboardingManager.swift */; };
 		32F883961E493AB70011EF4B /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F883951E493AB70011EF4B /* PreferencesManager.swift */; };
@@ -151,6 +152,7 @@
 		326D66C31E2EAF8D0070090E /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		32781FE21E25D61B0097B9A9 /* NotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		32781FE71E25E5AD0097B9A9 /* 3things-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "3things-alert.caf"; path = "Library/Sounds/3things-alert.caf"; sourceTree = "<group>"; };
+		32A3062E1E4B84370010D2AC /* SharingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingManager.swift; sourceTree = "<group>"; };
 		32F883931E49380A0011EF4B /* OnboardingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
 		32F883951E493AB70011EF4B /* PreferencesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
 		32F883991E493ED20011EF4B /* AppScopeFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScopeFactory.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				32220FDA1E42DC6800619C0C /* AudioManager.swift */,
 				32F883931E49380A0011EF4B /* OnboardingManager.swift */,
 				32F883951E493AB70011EF4B /* PreferencesManager.swift */,
+				32A3062E1E4B84370010D2AC /* SharingManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				14F99E051E1E7EA1008D6DAE /* AppDelegate.swift in Sources */,
 				32FFF1361E366EF9006554D0 /* Date.swift in Sources */,
 				323556EA1E2C2F3500453A34 /* Goal.swift in Sources */,
+				32A3062F1E4B84370010D2AC /* SharingManager.swift in Sources */,
 				323556DE1E2918AD00453A34 /* BEMPathManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

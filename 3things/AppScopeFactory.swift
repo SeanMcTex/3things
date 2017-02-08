@@ -12,6 +12,7 @@ protocol AppScopeFactory {
     func notificationsManager() -> NotificationsManager
     func quotesManager() -> QuotesManager
     func onboardingManager() -> OnboardingManager
+    func sharingManager() -> SharingManager
 }
 
 struct ProductionAppScopeFactory: AppScopeFactory {
@@ -21,6 +22,7 @@ struct ProductionAppScopeFactory: AppScopeFactory {
     private let onboarding: OnboardingManager
     private let notification: NotificationsManager
     private let quotes: QuotesManager
+    private let sharing: SharingManager
     
     init( extensionScopeFactory: ExtensionScopeFactory ) {
         self.extensionScopeFactory = extensionScopeFactory
@@ -29,6 +31,7 @@ struct ProductionAppScopeFactory: AppScopeFactory {
         self.onboarding = OnboardingManager( preferencesManager: preferencesManager )
         self.notification = NotificationsManager()
         self.quotes = QuotesManager()
+        self.sharing = SharingManager()
     }
         
     func notificationsManager() -> NotificationsManager {
@@ -41,5 +44,9 @@ struct ProductionAppScopeFactory: AppScopeFactory {
     
     func onboardingManager() -> OnboardingManager {
         return self.onboarding
+    }
+    
+    func sharingManager() -> SharingManager {
+        return self.sharing
     }
 }
