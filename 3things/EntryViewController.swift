@@ -31,7 +31,7 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
     // swiftlint:disable force_cast
     private let audioManager: AudioManager = {
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        return delegate.extensionScopeFactory.audioManager()
+        return delegate.appScopeFactory.audioManager()
     }()
     
     private let onboardingManager: OnboardingManager = {
@@ -47,7 +47,7 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
     
     private let preferencesManager: PreferencesManager = {
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        return delegate.extensionScopeFactory.preferencesManager()
+        return delegate.appScopeFactory.preferencesManager()
     }()
     
     private let sharingManager: SharingManager = {

@@ -13,11 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let extensionScopeFactory: ExtensionScopeFactory
     let appScopeFactory: AppScopeFactory
     
     override init() {
-        self.extensionScopeFactory = ProductionExtensionScopeFactory( domain: standardDomain )
+        let extensionScopeFactory = ProductionExtensionScopeFactory( domain: standardDomain )
         self.appScopeFactory = ProductionAppScopeFactory( extensionScopeFactory: extensionScopeFactory )
     }
     

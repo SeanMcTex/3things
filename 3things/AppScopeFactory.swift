@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AppScopeFactory {
+protocol AppScopeFactory: ExtensionScopeFactory {
     func notificationsManager() -> NotificationsManager
     func quotesManager() -> QuotesManager
     func onboardingManager() -> OnboardingManager
@@ -48,5 +48,18 @@ struct ProductionAppScopeFactory: AppScopeFactory {
     
     func sharingManager() -> SharingManager {
         return self.sharing
+    }
+    
+    // MARK: - Extension Scope Factory Passthrough
+    func goalsManager() -> GoalsManager {
+        return extensionScopeFactory.goalsManager()
+    }
+    
+    func audioManager() -> AudioManager {
+        return extensionScopeFactory.audioManager()
+    }
+    
+    func preferencesManager() -> PreferencesManager {
+        return extensionScopeFactory.preferencesManager()
     }
 }
