@@ -9,6 +9,12 @@
 import UIKit
 import NotificationCenter
 
+fileprivate let compactRowHeight: CGFloat = 26
+fileprivate let expandedRowHeight: CGFloat = 55
+
+fileprivate let compactLabelHeight: CGFloat = 50
+fileprivate let expandedLabelHeight: CGFloat = 130
+
 class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDelegate, BEMCheckBoxDelegate {
     
     @IBOutlet weak var goal1Label: UILabel!
@@ -23,8 +29,13 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     @IBOutlet weak var goal2Stack: UIStackView!
     @IBOutlet weak var goal3Stack: UIStackView!
     
+    @IBOutlet weak var goal1StackHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var goal2StackHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var goal3StackHeightConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var noGoalLabel: UILabel!
     @IBOutlet weak var noGoalButton: UIButton!
+    @IBOutlet weak var noGoalHeightConstraint: NSLayoutConstraint!
     
     private let goalsManager = GoalsManager(domain: standardDomain)
     private var completionHandler: ((NCUpdateResult) -> Void)?
@@ -59,6 +70,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
         } else {
             self.preferredContentSize = CGSize(width: maxSize.width, height: 200)
         }
+        
+        resizeFor( mode: activeDisplayMode )
     }
     
     // MARK: - Delegate Functions
@@ -103,6 +116,10 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     
     func goalCheckBoxes() -> [BEMCheckBox] {
         return [goal1CheckBox, goal2CheckBox, goal3CheckBox]
+    }
+    
+    func goalConstraints() -> [NSLayoutConstraint] {
+        return [goal1StackHeightConstraint, goal2StackHeightConstraint, goal3StackHeightConstraint]
     }
     
     func configureCheckBoxes() {
@@ -153,7 +170,23 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
         } else {
             self.audioManager.play( sound: .off )
         }
-
+        
+    }
+    
+    func resizeFor( mode: NCWidgetDisplayMode ) {
+        let isCompactMode = ( mode == .compact )
+        let stackSize = isCompactMode ? compactRowHeight : expandedRowHeight
+        
+        for constraint in goalConstraints() {
+            constraint.constant = stackSize
+        }
+        
+        for checkBox in goalCheckBoxes() {
+            checkBox.reload()
+        }
+        
+        let labelHeight = isCompactMode ? compactLabelHeight : expandedLabelHeight
+        noGoalHeightConstraint.constant = labelHeight
     }
     
 }
