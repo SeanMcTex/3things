@@ -51,7 +51,7 @@ class AudioManager {
     fileprivate class func getAudioPlayers() -> [Sound: AVAudioPlayer] {
         var players: [Sound: AVAudioPlayer] = [:]
         for sound in Sound.array {
-            if let filePath = Bundle.main.path(forResource: sound.rawValue, ofType: "caf") {
+            if let filePath = Bundle.main.path(forResource: sound.rawValue, ofType: "aif") {
                 let url = URL.init(fileURLWithPath: filePath)
                 if let player = try? AVAudioPlayer.init(contentsOf: url) {
                     player.prepareToPlay()
