@@ -9,7 +9,7 @@
 import UIKit
 import NotificationCenter
 
-fileprivate let compactRowHeight: CGFloat = 26
+fileprivate let compactRowHeight: CGFloat = 23
 fileprivate let expandedRowHeight: CGFloat = 55
 
 fileprivate let compactLabelHeight: CGFloat = 50
