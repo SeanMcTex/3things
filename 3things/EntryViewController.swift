@@ -286,7 +286,7 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
                                                object: nil)
     }
     
-    func appDidComeToForeground() {
+    @objc func appDidComeToForeground() {
         if !textFieldsAreEditing() {
             self.goalsManager?.fetchGoalsAndTimestamp()
         }

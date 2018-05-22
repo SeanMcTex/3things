@@ -138,7 +138,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
         }
     }
     
-    func didTriggerGestureRecognizer( _ sender: UITapGestureRecognizer ) {
+    @objc func didTriggerGestureRecognizer( _ sender: UITapGestureRecognizer ) {
         if let label = sender.view as? UILabel {
             for ( thisLabel, thisCheckBox ) in zip ( goalLabels(), goalCheckBoxes() ) {
                 if label == thisLabel {
