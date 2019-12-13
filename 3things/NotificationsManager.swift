@@ -50,7 +50,7 @@ class NotificationsManager {
         content.body = NSString.localizedUserNotificationString(forKey: "It's time to decide what three " +
             "things are most important for you to accomplish today",
                                                                 arguments: nil)
-        content.sound = UNNotificationSound(named: "3things-alert.aif")
+        content.sound = UNNotificationSound(named: convertToUNNotificationSoundName("3things-alert.aif"))
         
         return content
     }
@@ -61,7 +61,7 @@ class NotificationsManager {
         content.body = NSLocalizedString("You haven't set goals for \(numberOfNotificationsToSchedule) days," +
             "so we'll turn off reminders for now.",
                                          comment: "Final reminder alert body")
-        content.sound = UNNotificationSound(named: "3things-alert.aif")
+        content.sound = UNNotificationSound(named: convertToUNNotificationSoundName("3things-alert.aif"))
         
         return content
     }
@@ -74,4 +74,9 @@ class NotificationsManager {
         
         return Calendar.current.date(from: dateComponents) ?? Date()
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUNNotificationSoundName(_ input: String) -> UNNotificationSoundName {
+	return UNNotificationSoundName(rawValue: input)
 }

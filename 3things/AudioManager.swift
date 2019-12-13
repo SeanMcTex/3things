@@ -28,7 +28,7 @@ class AudioManager {
     static private func configureAudioSession() {
         let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory( AVAudioSessionCategoryAmbient )
+            try audioSession.setCategory( AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(AVAudioSession.Category.ambient)) )
         } catch {
             print("Error: unable to set audio session category")
         }
@@ -63,4 +63,9 @@ class AudioManager {
         return players
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
 }
