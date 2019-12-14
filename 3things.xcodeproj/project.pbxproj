@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		145C811A23A47F0F009DF16A /* XCTest+ClearField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C811923A47F0F009DF16A /* XCTest+ClearField.swift */; };
+		145C811B23A47F0F009DF16A /* XCTest+ClearField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C811923A47F0F009DF16A /* XCTest+ClearField.swift */; };
+		148AEF7723A475FC000DEE39 /* ThingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E241E1E7EA1008D6DAE /* ThingsUITests.swift */; };
 		14F99E051E1E7EA1008D6DAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E041E1E7EA1008D6DAE /* AppDelegate.swift */; };
 		14F99E071E1E7EA1008D6DAE /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E061E1E7EA1008D6DAE /* EntryViewController.swift */; };
 		14F99E0A1E1E7EA1008D6DAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F99E081E1E7EA1008D6DAE /* Main.storyboard */; };
 		14F99E0C1E1E7EA1008D6DAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F99E0B1E1E7EA1008D6DAE /* Assets.xcassets */; };
 		14F99E0F1E1E7EA1008D6DAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F99E0D1E1E7EA1008D6DAE /* LaunchScreen.storyboard */; };
-		14F99E251E1E7EA1008D6DAE /* ThingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E241E1E7EA1008D6DAE /* ThingsUITests.swift */; };
 		14F99E331E1F35B2008D6DAE /* GoalsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E321E1F35B2008D6DAE /* GoalsManager.swift */; };
 		14F99E351E1F36D9008D6DAE /* GoalsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E341E1F36D9008D6DAE /* GoalsManagerTests.swift */; };
 		14F99E3E1E1FF831008D6DAE /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F99E3D1E1FF831008D6DAE /* NotificationCenter.framework */; };
@@ -109,6 +111,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		145C811923A47F0F009DF16A /* XCTest+ClearField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+ClearField.swift"; sourceTree = "<group>"; };
 		14A3C0511E201DCF00362591 /* 3things Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "3things Today.entitlements"; sourceTree = "<group>"; };
 		14F99E011E1E7EA1008D6DAE /* 3things.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3things.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F99E041E1E7EA1008D6DAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -367,6 +370,7 @@
 			children = (
 				32FFF1351E366EF9006554D0 /* Date.swift */,
 				326C75AA1E3BB39600278758 /* Array.swift */,
+				145C811923A47F0F009DF16A /* XCTest+ClearField.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -661,7 +665,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14F99E251E1E7EA1008D6DAE /* ThingsUITests.swift in Sources */,
+				148AEF7723A475FC000DEE39 /* ThingsUITests.swift in Sources */,
+				145C811A23A47F0F009DF16A /* XCTest+ClearField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +693,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32FFF1401E38F8CF006554D0 /* ThingsScreenshots.swift in Sources */,
+				145C811B23A47F0F009DF16A /* XCTest+ClearField.swift in Sources */,
 				32FFF1481E38F8F6006554D0 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1023,7 +1029,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.-thingsScreenshots";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "96c4cab7-675f-4437-aa0c-169e039ff392";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = 3things;
 			};
 			name = Debug;
@@ -1038,7 +1044,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.-thingsScreenshots";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "96c4cab7-675f-4437-aa0c-169e039ff392";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = 3things;
 			};
 			name = Release;

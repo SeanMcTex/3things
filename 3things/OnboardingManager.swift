@@ -13,6 +13,7 @@ protocol OnboardingManagerDelegate: class {
 }
 
 class OnboardingManager {
+    public var enabled = true
     private let preferencesManager: PreferencesManager
     weak var delegate: OnboardingManagerDelegate?
     
@@ -21,6 +22,10 @@ class OnboardingManager {
     }
     
     func presentAlertIfNeeded(_ viewController: UIViewController) {
+        guard enabled else {
+            return
+        }
+        
         let preferencesManager = self.preferencesManager
         
         if !preferencesManager.appHasRunBefore {
