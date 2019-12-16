@@ -526,8 +526,7 @@
 					};
 					32FFF13C1E38F8CF006554D0 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 4U7FD3V45R;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = 14F99E001E1E7EA1008D6DAE;
 					};
 				};
@@ -1007,7 +1006,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.things.things-Today";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore net.mcmains.things.things-Today";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development net.mcmains.things.things-Today";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "3things/3things-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1040,13 +1039,16 @@
 		32FFF1451E38F8CF006554D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 4U7FD3V45R;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = 3thingsScreenshots/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.-thingsScreenshots";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "96c4cab7-675f-4437-aa0c-169e039ff392";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = 3things;
 			};
@@ -1055,13 +1057,16 @@
 		32FFF1461E38F8CF006554D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 4U7FD3V45R;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = 3thingsScreenshots/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.-thingsScreenshots";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "96c4cab7-675f-4437-aa0c-169e039ff392";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = 3things;
 			};
