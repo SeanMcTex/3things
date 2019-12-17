@@ -12,11 +12,14 @@ import XCTest
 
 class ThingsScreenshots: XCTestCase {
     
+    var app: XCUIApplication = XCUIApplication()
+    
     override func setUp() {
         super.setUp()
         
-        let app = XCUIApplication()
+        app = XCUIApplication()
         setupSnapshot( app )
+        app.launchArguments += ["UI-Testing"]
         app.launch()
     }
     
@@ -26,13 +29,9 @@ class ThingsScreenshots: XCTestCase {
     }
     
     func testCreateScreenshots() {
-        
-        let app = XCUIApplication()
-
+                
         let goal1fieldTextField = app.textFields["goal1Field"]
-        goal1fieldTextField.tap()
-        goal1fieldTextField.buttons["Clear text"].tap()
-        goal1fieldTextField.typeText("Work Out\n")
+        goal1fieldTextField.clearAndEnterText(text: "Work Out\n")
         
         let goal2fieldTextField = app.textFields["goal2Field"]
         goal2fieldTextField.tap()

@@ -200,7 +200,7 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
             if animated {
                 UIView.animate(withDuration: 0.3,
                                delay: delay,
-                               options: UIViewAnimationOptions.curveEaseOut,
+                               options: UIView.AnimationOptions.curveEaseOut,
                                animations: animations,
                                completion: nil)
                 delay += 0.1
@@ -232,7 +232,7 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
             if animated {
                 UIView.animate(withDuration: 0.3,
                                delay: delay,
-                               options: UIViewAnimationOptions.curveEaseOut,
+                               options: UIView.AnimationOptions.curveEaseOut,
                                animations: animations,
                                completion: nil)
                 delay += 0.1
@@ -282,7 +282,7 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
     func registerForNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(appDidComeToForeground),
-                                               name: .UIApplicationDidBecomeActive,
+                                               name: UIApplication.didBecomeActiveNotification,
                                                object: nil)
     }
     
