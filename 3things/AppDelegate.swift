@@ -10,7 +10,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     
     let appScopeFactory: AppScopeFactory
@@ -21,9 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        setStateForUITesting()
         return true
     }
-
+    
+    static var isUITestingEnabled: Bool {
+        get {
+            return ProcessInfo.processInfo.arguments.contains("UI-Testing")
+        }
+    }
+    
+    private func setStateForUITesting() {
+        if AppDelegate.isUITestingEnabled {
+            self.appScopeFactory.goalsManager().clearGoals()
+            self.appScopeFactory.onboardingManager().enabled = false
+        }
+    }
+    
 }

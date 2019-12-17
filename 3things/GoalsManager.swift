@@ -45,6 +45,11 @@ class GoalsManager {
         self.userDefaults?.synchronize()
     }
     
+    func clearGoals() {
+        goals = []
+        self.userDefaults?.removePersistentDomain(forName: domain)
+    }
+    
     func fetchGoalsAndTimestamp() {
         let goals = fetchGoals()
         let current = areGoalsCurrent()

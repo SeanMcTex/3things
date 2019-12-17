@@ -71,11 +71,12 @@ platform :ios do
 
   desc "Deploy a new version to the App Store"
   lane :release do
-    # match(type: "appstore")
-    # snapshot
-    gym # Build your app - more options available
-    deliver(force: true)
-    # frameit
+    # capture_screenshots                  # generate new screenshots for the App Store
+    sync_code_signing(type: "appstore")  # see code signing guide for more information
+    increment_build_number
+    commit_version_bump
+    build_app(scheme: "3things")
+    upload_to_app_store                  # upload your app to App Store Connect
   end
 
   # You can define as many lanes as you want
