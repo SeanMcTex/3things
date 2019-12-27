@@ -95,6 +95,10 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
         self.sharingManager.share(goals: goalsFromUI(), in: self)
     }
     
+    @IBAction func didTapSettingsButton(_ sender: Any) {
+        NSLog("tapped settings")
+    }
+    
     // MARK: - Delegate Methods
     func didReceive(goals: [Goal], areGoalsCurrent: Bool) {
         for ( field, goal ) in zip( self.goalFields(), goals ) {
