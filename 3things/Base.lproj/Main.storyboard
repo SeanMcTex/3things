@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -211,9 +210,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="U80-Q5-Ewa">
-                                <rect key="frame" x="361" y="555.66666666666663" width="33" height="33.333333333333371"/>
+                                <rect key="frame" x="350" y="545.33333333333337" width="44" height="44"/>
                                 <accessibility key="accessibilityConfiguration" identifier="settingsButton" label="Settings"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="H4k-pR-xZ6"/>
                                     <constraint firstAttribute="width" secondItem="U80-Q5-Ewa" secondAttribute="height" multiplier="1:1" priority="999" id="qNQ-gd-glp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -230,14 +230,13 @@
                         <color key="tintColor" red="0.0" green="0.71999999999999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="GQf-hs-dDv" secondAttribute="trailing" id="4Pb-O9-CU4"/>
-                            <constraint firstItem="U80-Q5-Ewa" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.08" id="FUd-Gq-fs0"/>
                             <constraint firstItem="7S0-bq-5eX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="HKJ-MC-dZW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GQf-hs-dDv" secondAttribute="bottom" constant="8" symbolic="YES" id="Sph-VD-Et7"/>
                             <constraint firstItem="GQf-hs-dDv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="UOf-Tk-Hqb"/>
                             <constraint firstItem="7S0-bq-5eX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VVV-qm-BtG"/>
                             <constraint firstItem="7S0-bq-5eX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YaB-dc-zL0"/>
                             <constraint firstItem="7S0-bq-5eX" firstAttribute="trailing" secondItem="U80-Q5-Ewa" secondAttribute="trailing" id="fZ4-Tj-gJL"/>
-                            <constraint firstItem="GQf-hs-dDv" firstAttribute="top" secondItem="U80-Q5-Ewa" secondAttribute="bottom" constant="8.5" id="fum-5y-CLU"/>
+                            <constraint firstItem="GQf-hs-dDv" firstAttribute="top" secondItem="U80-Q5-Ewa" secondAttribute="bottom" constant="8" symbolic="YES" id="fum-5y-CLU"/>
                             <constraint firstItem="U80-Q5-Ewa" firstAttribute="top" relation="greaterThanOrEqual" secondItem="emb-Ro-gj1" secondAttribute="bottom" constant="8.5" id="vgf-yF-D1d"/>
                             <constraint firstItem="GQf-hs-dDv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7S0-bq-5eX" secondAttribute="bottom" constant="8" symbolic="YES" id="ygs-EN-ofT"/>
                         </constraints>

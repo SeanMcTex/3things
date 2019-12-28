@@ -18,24 +18,27 @@ struct SettingsUIView: View {
             
             Text("3things Settings")
                 .font(.title)
+                .padding()
             
             Form {
-            Text("Adjust the time that 3things reminds you to set your goals for the day")
-                .padding([.top, .bottom
-            ], 15)
-                .font(.headline)
-            
+                Text("Adjust the time that 3things reminds you to set your goals for the day")
+                    .padding([.top, .bottom
+                    ], 15)
+                    .font(.headline)
+                
                 DatePicker(selection: $settings.reminderTime, displayedComponents: .hourAndMinute,
-                       label: { Text("Reminder Time:")
-                        .font(.headline) })
+                           label: { Text("Reminder Time:")
+                            .font(.headline) })
+                    .accentColor(Color("3thingsBlue"))
             }
-                        
+            
             Spacer()
             
             Button(action: dismissAction ) {
                 Text("Done")
                     .foregroundColor(Color("3thingsBlue"))
                     .bold()
+                    .padding()
             }
         }
         .navigationBarTitle(Text("Settings"), displayMode: .inline)
