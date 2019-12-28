@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDelegate,
 BEMCheckBoxDelegate, OnboardingManagerDelegate {
@@ -96,7 +97,9 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
     }
     
     @IBAction func didTapSettingsButton(_ sender: Any) {
-        NSLog("tapped settings")
+        let settingsView = SettingsUIView(dismissAction: {self.dismiss( animated: true, completion: nil )})
+        let settingsViewController = UIHostingController(rootView: settingsView )
+        present( settingsViewController, animated: true )
     }
     
     // MARK: - Delegate Methods
