@@ -30,6 +30,7 @@ struct SettingsUIView: View {
                            label: { Text("Reminder Time:")
                             .font(.headline) })
                     .accentColor(Color("3thingsBlue"))
+                    .accessibility(identifier: "reminderPicker")
             }
             
             Spacer()

@@ -44,6 +44,11 @@ class ThingsScreenshots: XCTestCase {
         goal3fieldTextField.typeText("Finish Presentation\n")
         
         snapshot("2GoalsEnteredSomeItemsSelected")
+        
+        let settingsButton = app.buttons["settingsButton"]
+        settingsButton.tap()
+        
+        snapshot("3SettingReminderTime")
     }
     
 }
