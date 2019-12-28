@@ -69,6 +69,4 @@ class NotificationsManagerTests: XCTestCase {
         let isToday = Calendar.current.isDateInToday( firstReminder )
         XCTAssert( isToday )
     }
-        
-        
 }

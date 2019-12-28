@@ -17,12 +17,12 @@ protocol PreferencesManager: class {
     var settings: Settings {get set}
 }
 
-fileprivate let appHasRunBeforeKey = "appHasRunBefore"
-fileprivate let hasAskedAboutNotificationsKey = "hasAskedAboutNotificationsKey"
-fileprivate let hasAcceptedNotificationsKey = "hasAcceptedNotificationsKey"
-fileprivate let hasAskedAboutTodayWidgetKey = "hasAskedAboutTodayWidgetKey"
-fileprivate let todayWidgetHasBeenDisplayedKey = "todayWidgetHasBeenDisplayedKey"
-fileprivate let reminderTimeKey = "reminderTimeKey"
+private let appHasRunBeforeKey = "appHasRunBefore"
+private let hasAskedAboutNotificationsKey = "hasAskedAboutNotificationsKey"
+private let hasAcceptedNotificationsKey = "hasAcceptedNotificationsKey"
+private let hasAskedAboutTodayWidgetKey = "hasAskedAboutTodayWidgetKey"
+private let todayWidgetHasBeenDisplayedKey = "todayWidgetHasBeenDisplayedKey"
+private let reminderTimeKey = "reminderTimeKey"
 
 class UserDefaultsPreferencesManager: PreferencesManager {
     let userDefaults: UserDefaults

@@ -72,7 +72,7 @@ class PreferencesManagerTests: XCTestCase {
             XCTAssertEqual(components.hour, 7)
             XCTAssertEqual(components.minute, 0)
         } else {
-            XCTFail()
+            XCTFail("Unable to parse components from reminderTime")
         }
     }
     
@@ -91,9 +91,8 @@ class PreferencesManagerTests: XCTestCase {
             XCTAssertEqual(components.hour, 15)
             XCTAssertEqual(components.minute, 0)
         } else {
-            XCTFail()
+            XCTFail("Unable to parse components from reminderTime")
         }
 
-        
     }
 }

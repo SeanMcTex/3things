@@ -48,7 +48,7 @@ class AudioManager {
         player.play()
     }
     
-    fileprivate class func getAudioPlayers() -> [Sound: AVAudioPlayer] {
+    private class func getAudioPlayers() -> [Sound: AVAudioPlayer] {
         var players: [Sound: AVAudioPlayer] = [:]
         for sound in Sound.array {
             if let filePath = Bundle.main.path(forResource: sound.rawValue, ofType: "aif") {
@@ -66,6 +66,6 @@ class AudioManager {
 }
 
 // Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+private func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
 	return input.rawValue
 }
