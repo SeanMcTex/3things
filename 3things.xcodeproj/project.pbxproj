@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		145C525C23B7954400BD7521 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9DCB023B6446600B191A6 /* Settings.swift */; };
 		145C811A23A47F0F009DF16A /* XCTest+ClearField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C811923A47F0F009DF16A /* XCTest+ClearField.swift */; };
 		145C811B23A47F0F009DF16A /* XCTest+ClearField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C811923A47F0F009DF16A /* XCTest+ClearField.swift */; };
 		148AEF7723A475FC000DEE39 /* ThingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E241E1E7EA1008D6DAE /* ThingsUITests.swift */; };
@@ -687,6 +688,7 @@
 				323556E21E29E04900453A34 /* BEMPathManager.m in Sources */,
 				14F99E411E1FF831008D6DAE /* TodayViewController.swift in Sources */,
 				323556DF1E29E04900453A34 /* BEMAnimationManager.m in Sources */,
+				145C525C23B7954400BD7521 /* Settings.swift in Sources */,
 				323556E11E29E04900453A34 /* BEMCheckBoxGroup.m in Sources */,
 				323556E01E29E04900453A34 /* BEMCheckBox.m in Sources */,
 				32F883921E43BA5F0011EF4B /* AudioManager.swift in Sources */,

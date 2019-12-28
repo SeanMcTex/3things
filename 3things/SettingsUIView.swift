@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SettingsUIView: View {
-    @ObservedObject var settings = Settings()
+    @ObservedObject var settings: Settings
     var dismissAction: (() -> Void)
     
     var body: some View {
@@ -51,7 +51,7 @@ struct SettingsUIView: View {
 
 struct SettingsUIView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsUIView(dismissAction: {}
+        SettingsUIView(settings: Settings(), dismissAction: {}
         )
     }
 }

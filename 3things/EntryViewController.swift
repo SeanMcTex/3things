@@ -97,7 +97,13 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
     }
     
     @IBAction func didTapSettingsButton(_ sender: Any) {
-        let settingsView = SettingsUIView(dismissAction: {self.dismiss( animated: true, completion: nil )})
+        let settings = preferencesManager.settings
+        let settingsView = SettingsUIView( settings: settings ,
+                                           dismissAction: {
+                                            self.dismiss( animated: true, completion: nil )
+                                            self.preferencesManager.settings = settings
+        }
+        )
         let settingsViewController = UIHostingController(rootView: settingsView )
         present( settingsViewController, animated: true )
     }
