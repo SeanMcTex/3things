@@ -18,14 +18,19 @@ class NotificationsManager {
         center.requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in return }
     }
     
-    public func scheduleReminder( areTodaysGoalsSet: Bool ) {
+    public func scheduleReminder( areTodaysGoalsSet: Bool, reminderTime: Date ) {
+        guard let hour = reminderTime.components().hour,
+            let minute = reminderTime.components().minute else {
+            return
+        }
         getNotificationPermissions()
         
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.removeAllDeliveredNotifications()
         notificationCenter.removeAllPendingNotificationRequests()
         
-        let reminderDates = todaysReminderDate().next(days: numberOfNotificationsToSchedule,
+        let todaysReminderDate = Date.todayAtTime(hour: hour, minute: minute)
+        let reminderDates = todaysReminderDate.next(days: numberOfNotificationsToSchedule,
                                                       includeStartDate: !areTodaysGoalsSet)
         for reminderDate in reminderDates {
             
@@ -65,18 +70,9 @@ class NotificationsManager {
         
         return content
     }
-    
-    internal func todaysReminderDate() -> Date {
-        var dateComponents = Date().components()
-        dateComponents.hour = 7
-        dateComponents.minute = 0
-        dateComponents.second = 0
-        
-        return Calendar.current.date(from: dateComponents) ?? Date()
-    }
 }
 
 // Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertToUNNotificationSoundName(_ input: String) -> UNNotificationSoundName {
+private func convertToUNNotificationSoundName(_ input: String) -> UNNotificationSoundName {
 	return UNNotificationSoundName(rawValue: input)
 }

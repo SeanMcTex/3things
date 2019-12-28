@@ -9,11 +9,11 @@
 import UIKit
 import NotificationCenter
 
-fileprivate let compactRowHeight: CGFloat = 23
-fileprivate let expandedRowHeight: CGFloat = 55
+private let compactRowHeight: CGFloat = 23
+private let expandedRowHeight: CGFloat = 55
 
-fileprivate let compactLabelHeight: CGFloat = 50
-fileprivate let expandedLabelHeight: CGFloat = 130
+private let compactLabelHeight: CGFloat = 50
+private let expandedLabelHeight: CGFloat = 130
 
 class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDelegate, BEMCheckBoxDelegate {
     

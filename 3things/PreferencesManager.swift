@@ -14,13 +14,15 @@ protocol PreferencesManager: class {
     var hasAcceptedNotifications: Bool {get set}
     var hasAskedAboutTodayWidget: Bool {get set}
     var todayWidgetHasBeenDisplayed: Bool {get set}
+    var settings: Settings {get set}
 }
 
-fileprivate let appHasRunBeforeKey = "appHasRunBefore"
-fileprivate let hasAskedAboutNotificationsKey = "hasAskedAboutNotificationsKey"
-fileprivate let hasAcceptedNotificationsKey = "hasAcceptedNotificationsKey"
-fileprivate let hasAskedAboutTodayWidgetKey = "hasAskedAboutTodayWidgetKey"
-fileprivate let todayWidgetHasBeenDisplayedKey = "todayWidgetHasBeenDisplayedKey"
+private let appHasRunBeforeKey = "appHasRunBefore"
+private let hasAskedAboutNotificationsKey = "hasAskedAboutNotificationsKey"
+private let hasAcceptedNotificationsKey = "hasAcceptedNotificationsKey"
+private let hasAskedAboutTodayWidgetKey = "hasAskedAboutTodayWidgetKey"
+private let todayWidgetHasBeenDisplayedKey = "todayWidgetHasBeenDisplayedKey"
+private let reminderTimeKey = "reminderTimeKey"
 
 class UserDefaultsPreferencesManager: PreferencesManager {
     let userDefaults: UserDefaults
@@ -71,6 +73,21 @@ class UserDefaultsPreferencesManager: PreferencesManager {
         }
         get {
             return self.userDefaults.bool( forKey: todayWidgetHasBeenDisplayedKey )
+        }
+    }
+    
+    var settings: Settings {
+        set( newValue ) {
+            self.userDefaults.set( newValue.reminderTime, forKey: reminderTimeKey )
+        }
+        get {
+            let settings = Settings()
+            
+            if let reminderTime = self.userDefaults.object(forKey: reminderTimeKey ) as? Date {
+                settings.reminderTime = reminderTime
+            }
+            
+            return settings
         }
     }
 }

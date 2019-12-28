@@ -14,6 +14,15 @@ extension Date {
         return calendar.dateComponents([.second, .minute, .hour, .day, .month, .year], from: self)
     }
     
+    static func todayAtTime(hour: Int, minute: Int) -> Date {
+        var components = Date().components()
+        components.hour = hour
+        components.minute = minute
+        components.second = 0
+        
+        return Calendar.current.date(from: components) ?? Date()
+    }
+
     func next( days: Int, includeStartDate: Bool ) -> Set<Date> {
         var returnValues: Set<Date> = []
         
