@@ -29,6 +29,16 @@ class DateExtensionTests: XCTestCase {
         XCTAssertFalse( dates?.contains( self.sut! ) ?? false )
     }
     
+    func testToday() {
+        let sixTwentyNine = Date.todayAtTime(hour: 6, minute: 29)
+        XCTAssertEqual(sixTwentyNine.components().hour, 6)
+        XCTAssertEqual(sixTwentyNine.components().minute, 29)
+        XCTAssertEqual(sixTwentyNine.components().second, 0)
+        XCTAssertEqual(sixTwentyNine.components().year, Date().components().year)
+        XCTAssertEqual(sixTwentyNine.components().month, Date().components().month)
+        XCTAssertEqual(sixTwentyNine.components().day, Date().components().day)
+    }
+    
     func testNext7DaysWithStartDate() {
         let dates = self.sut?.next( days: 7, includeStartDate: true )
         

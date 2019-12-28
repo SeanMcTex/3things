@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		145C525C23B7954400BD7521 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9DCB023B6446600B191A6 /* Settings.swift */; };
+		145C525D23B7E30200BD7521 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FFF1351E366EF9006554D0 /* Date.swift */; };
 		145C811A23A47F0F009DF16A /* XCTest+ClearField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C811923A47F0F009DF16A /* XCTest+ClearField.swift */; };
 		145C811B23A47F0F009DF16A /* XCTest+ClearField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145C811923A47F0F009DF16A /* XCTest+ClearField.swift */; };
 		148AEF7723A475FC000DEE39 /* ThingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F99E241E1E7EA1008D6DAE /* ThingsUITests.swift */; };
@@ -693,6 +694,7 @@
 				323556E01E29E04900453A34 /* BEMCheckBox.m in Sources */,
 				32F883921E43BA5F0011EF4B /* AudioManager.swift in Sources */,
 				323556EE1E2C31D000453A34 /* PropertyListReadable.swift in Sources */,
+				145C525D23B7E30200BD7521 /* Date.swift in Sources */,
 				323556EB1E2C31BF00453A34 /* Goal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

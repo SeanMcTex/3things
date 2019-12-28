@@ -102,6 +102,8 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
                                            dismissAction: {
                                             self.dismiss( animated: true, completion: nil )
                                             self.preferencesManager.settings = settings
+                                            self.notificationsManager.scheduleReminder(areTodaysGoalsSet: false,
+                                                                                       reminderTime: settings.reminderTime)
         }
         )
         let settingsViewController = UIHostingController(rootView: settingsView )
@@ -311,7 +313,7 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
     
     func scheduleNotificationsIfWeHaveAsked() {
         if self.preferencesManager.hasAcceptedNotifications {
-            self.notificationsManager.scheduleReminder( areTodaysGoalsSet: true )
+            self.notificationsManager.scheduleReminder( areTodaysGoalsSet: true, reminderTime: preferencesManager.settings.reminderTime )
         }
     }
 }

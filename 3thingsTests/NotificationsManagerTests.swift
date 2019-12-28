@@ -29,7 +29,7 @@ class NotificationsManagerTests: XCTestCase {
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.removeAllPendingNotificationRequests()
         
-        sut?.scheduleReminder(areTodaysGoalsSet: true)
+        sut?.scheduleReminder(areTodaysGoalsSet: true, reminderTime: Date.todayAtTime(hour: 7, minute: 0))
         
         let notificationExpectation = self.expectation(description: "7 notifications scheduled")
         notificationCenter.getPendingNotificationRequests { (requests) in
@@ -41,13 +41,34 @@ class NotificationsManagerTests: XCTestCase {
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
     
-    func testFirstReminderDateIsTodayWhenGoalsAreNotCurrent() {
-        if let firstReminder = sut?.todaysReminderDate() {
-            let isToday = Calendar.current.isDateInToday( firstReminder )
-            XCTAssert( isToday )
-        } else {
-            XCTFail("Couldn't get first reminder date")
+    func testRemindersAreAtSpecifiedTime() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.removeAllPendingNotificationRequests()
+        
+        sut?.scheduleReminder(areTodaysGoalsSet: true, reminderTime: Date.todayAtTime(hour: 13, minute: 15))
+        
+        let notificationExpectation = self.expectation(description: "notification scheduled on time")
+        notificationCenter.getPendingNotificationRequests { (requests) in
+            if let request = requests.first {
+                if let trigger = request.trigger as? UNCalendarNotificationTrigger {
+                    XCTAssertEqual(trigger.dateComponents.hour, 13)
+                    XCTAssertEqual(trigger.dateComponents.minute, 15)
+                    notificationExpectation.fulfill()
+                } else {
+                    XCTFail("Notification of incorrect type")
+                }
+            }
         }
+        
+        self.waitForExpectations(timeout: 1.0, handler: nil)
+
     }
     
+    func testFirstReminderDateIsTodayWhenGoalsAreNotCurrent() {
+        let firstReminder = Date.todayAtTime(hour: 7, minute: 0)
+        let isToday = Calendar.current.isDateInToday( firstReminder )
+        XCTAssert( isToday )
+    }
+        
+        
 }
