@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class EntryViewController: UIViewController, GoalsManagerDelegate, UITextFieldDelegate,
 BEMCheckBoxDelegate, OnboardingManagerDelegate {
@@ -93,6 +94,22 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
     
     @IBAction func didTapShareGoalsButton(_ sender: Any) {
         self.sharingManager.share(goals: goalsFromUI(), in: self)
+    }
+    
+    @IBAction func didTapSettingsButton(_ sender: Any) {
+        let settings = preferencesManager.settings
+        let settingsView = SettingsUIView( settings: settings ,
+                                           dismissAction: {
+                                            self.dismiss( animated: true, completion: nil )
+                                            self.preferencesManager.settings = settings
+                                            self.notificationsManager.scheduleReminder(
+                                                areTodaysGoalsSet: false,
+                                                reminderTime: settings.reminderTime
+                                            )
+        }
+        )
+        let settingsViewController = UIHostingController(rootView: settingsView )
+        present( settingsViewController, animated: true )
     }
     
     // MARK: - Delegate Methods
@@ -298,7 +315,10 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
     
     func scheduleNotificationsIfWeHaveAsked() {
         if self.preferencesManager.hasAcceptedNotifications {
-            self.notificationsManager.scheduleReminder( areTodaysGoalsSet: true )
+            self.notificationsManager.scheduleReminder(
+                areTodaysGoalsSet: true, reminderTime:
+                preferencesManager.settings.reminderTime
+            )
         }
     }
 }
