@@ -1,1 +1,2 @@
-- Added support for dark mode
+- Added settings screen
+- Added the ability to specify when reminders are triggered
