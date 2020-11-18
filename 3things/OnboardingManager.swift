@@ -44,8 +44,8 @@ class OnboardingManager {
                                         comment: "Welcome dialog body text")
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let OK = NSLocalizedString("OK", comment: "Alert Dialog Confirmation Button Text")
-        let action = UIAlertAction(title: OK, style: .default)
+        let OKText = NSLocalizedString("OK", comment: "Alert Dialog Confirmation Button Text")
+        let action = UIAlertAction(title: OKText, style: .default)
         alertController.addAction( action )
         
         viewController.present(alertController, animated: true)
@@ -61,8 +61,8 @@ class OnboardingManager {
                                         comment: "Today widget dialog body text")
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let OK = NSLocalizedString("OK", comment: "Alert Dialog Confirmation Button Text")
-        let action = UIAlertAction(title: OK, style: .default)
+        let OKText = NSLocalizedString("OK", comment: "Alert Dialog Confirmation Button Text")
+        let action = UIAlertAction(title: OKText, style: .default)
         alertController.addAction( action )
         
         viewController.present(alertController, animated: true)

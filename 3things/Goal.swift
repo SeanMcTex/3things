@@ -32,7 +32,7 @@ extension Goal {
     }
     
     func propertyListRepresentation() -> NSDictionary {
-        let dictionary: [String : Any] = [ Goal.completedKey: self.completed,
+        let dictionary: [String: Any] = [ Goal.completedKey: self.completed,
                                            Goal.nameKey: self.name]
         return dictionary as NSDictionary
     }

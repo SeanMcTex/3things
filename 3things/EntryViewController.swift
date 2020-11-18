@@ -78,10 +78,6 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
         self.onboardingManager.presentAlertIfNeeded( self )
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        clearNotifications()
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -131,9 +127,9 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
     
     func didTap(_ checkBox: BEMCheckBox) {
         if checkBox.on {
-            self.audioManager.play( sound: .on )
+            self.audioManager.play( sound: .checkOn )
         } else {
-            self.audioManager.play( sound: .off )
+            self.audioManager.play( sound: .checkOff )
         }
         self.persistGoals( updatingTimestamp: false )
     }
@@ -200,7 +196,7 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
     
     func updateUIToGoalsEnteredState(animated: Bool) {
         var delay = 0.0
-        for ( field, checkbox ) in zip ( goalFields(), goalCheckBoxes() ) {
+        for ( field, checkbox ) in zip( goalFields(), goalCheckBoxes() ) {
             
             let animations = {
                 field.isEnabled = false
@@ -234,7 +230,7 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
     
     func updateUIToEditingState(animated: Bool) {
         var delay = 0.0
-        for ( field, checkbox ) in zip ( goalFields(), goalCheckBoxes() ) {
+        for ( field, checkbox ) in zip( goalFields(), goalCheckBoxes() ) {
             
             let animations = {
                 field.isEnabled = true
@@ -307,10 +303,6 @@ BEMCheckBoxDelegate, OnboardingManagerDelegate {
         if !textFieldsAreEditing() {
             self.goalsManager?.fetchGoalsAndTimestamp()
         }
-    }
-    
-    func clearNotifications() {
-        NotificationCenter.default.removeObserver(self)
     }
     
     func scheduleNotificationsIfWeHaveAsked() {

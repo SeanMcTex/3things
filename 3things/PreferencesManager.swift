@@ -32,54 +32,51 @@ class UserDefaultsPreferencesManager: PreferencesManager {
     }
     
     var appHasRunBefore: Bool {
-        set( newValue ) {
-            self.userDefaults.set( newValue, forKey: appHasRunBeforeKey )
-        }
         get {
             return self.userDefaults.bool( forKey: appHasRunBeforeKey )
+        }
+        set( newValue ) {
+            self.userDefaults.set( newValue, forKey: appHasRunBeforeKey )
         }
     }
     
     var hasAskedAboutNotifications: Bool {
-        set( newValue ) {
-            self.userDefaults.set( newValue, forKey: hasAskedAboutNotificationsKey )
-        }
         get {
             return self.userDefaults.bool( forKey: hasAskedAboutNotificationsKey )
+        }
+        set( newValue ) {
+            self.userDefaults.set( newValue, forKey: hasAskedAboutNotificationsKey )
         }
     }
 
     var hasAcceptedNotifications: Bool {
-        set( newValue ) {
-            self.userDefaults.set( newValue, forKey: hasAcceptedNotificationsKey )
-        }
         get {
             return self.userDefaults.bool( forKey: hasAcceptedNotificationsKey )
+        }
+        set( newValue ) {
+            self.userDefaults.set( newValue, forKey: hasAcceptedNotificationsKey )
         }
     }
 
     var hasAskedAboutTodayWidget: Bool {
-        set( newValue ) {
-            self.userDefaults.set( newValue, forKey: hasAskedAboutTodayWidgetKey )
-        }
         get {
             return self.userDefaults.bool( forKey: hasAskedAboutTodayWidgetKey )
+        }
+        set( newValue ) {
+            self.userDefaults.set( newValue, forKey: hasAskedAboutTodayWidgetKey )
         }
     }
 
     var todayWidgetHasBeenDisplayed: Bool {
-        set( newValue ) {
-            self.userDefaults.set( newValue, forKey: todayWidgetHasBeenDisplayedKey )
-        }
         get {
             return self.userDefaults.bool( forKey: todayWidgetHasBeenDisplayedKey )
+        }
+        set( newValue ) {
+            self.userDefaults.set( newValue, forKey: todayWidgetHasBeenDisplayedKey )
         }
     }
     
     var settings: Settings {
-        set( newValue ) {
-            self.userDefaults.set( newValue.reminderTime, forKey: reminderTimeKey )
-        }
         get {
             let settings = Settings()
             
@@ -88,6 +85,9 @@ class UserDefaultsPreferencesManager: PreferencesManager {
             }
             
             return settings
+        }
+        set( newValue ) {
+            self.userDefaults.set( newValue.reminderTime, forKey: reminderTimeKey )
         }
     }
 }

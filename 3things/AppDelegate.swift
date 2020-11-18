@@ -27,9 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     static var isUITestingEnabled: Bool {
-        get {
-            return ProcessInfo.processInfo.arguments.contains("UI-Testing")
-        }
+        return ProcessInfo.processInfo.arguments.contains("UI-Testing")
     }
     
     private func setStateForUITesting() {

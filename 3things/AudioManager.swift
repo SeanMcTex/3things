@@ -10,10 +10,10 @@ import Foundation
 import AVFoundation
 
 enum Sound: String {
-    case on = "CheckOn"
-    case off = "CheckOff"
+    case checkOn = "CheckOn"
+    case checkOff = "CheckOff"
     
-    static let array = [on, off]
+    static let array = [checkOn, checkOff]
 }
 
 class AudioManager {
@@ -28,7 +28,9 @@ class AudioManager {
     static private func configureAudioSession() {
         let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory( AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(AVAudioSession.Category.ambient)) )
+            try audioSession.setCategory(
+                AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(AVAudioSession.Category.ambient)
+                ))
         } catch {
             print("Error: unable to set audio session category")
         }

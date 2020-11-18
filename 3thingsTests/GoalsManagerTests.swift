@@ -15,7 +15,7 @@ class GoalsManagerTests: XCTestCase, GoalsManagerDelegate {
     
     private var sut: GoalsManager?
     private var asyncExpectation: XCTestExpectation?
-    private var asyncCompletion: (( _ goals: [Goal], _ areGoalsCurrent: Bool ) -> (Void))?
+    private var asyncCompletion: (( _ goals: [Goal], _ areGoalsCurrent: Bool ) -> Void)?
     
     override func setUp() {
         super.setUp()

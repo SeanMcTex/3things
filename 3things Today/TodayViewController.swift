@@ -77,11 +77,9 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     // MARK: - Delegate Functions
     func didReceive(goals: [Goal], areGoalsCurrent: Bool) {
         var newData = false
-        for ( label, goal ) in zip( self.goalLabels(), goals ) {
-            if label.text != goal.name {
-                label.text = goal.name
-                newData = true
-            }
+        for ( label, goal ) in zip( self.goalLabels(), goals ) where label.text != goal.name {
+            label.text = goal.name
+            newData = true
         }
         
         for ( checkBox, goal ) in zip( self.goalCheckBoxes(), goals ) {
@@ -140,11 +138,9 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     
     @objc func didTriggerGestureRecognizer( _ sender: UITapGestureRecognizer ) {
         if let label = sender.view as? UILabel {
-            for ( thisLabel, thisCheckBox ) in zip ( goalLabels(), goalCheckBoxes() ) {
-                if label == thisLabel {
-                    thisCheckBox.setOn(!thisCheckBox.on, animated: true)
-                    playSound(for: thisCheckBox)
-                }
+            for ( thisLabel, thisCheckBox ) in zip( goalLabels(), goalCheckBoxes() ) where label == thisLabel {
+                thisCheckBox.setOn(!thisCheckBox.on, animated: true)
+                playSound(for: thisCheckBox)
             }
         }
         
@@ -166,9 +162,9 @@ class TodayViewController: UIViewController, NCWidgetProviding, GoalsManagerDele
     
     func playSound(for checkBox: BEMCheckBox) {
         if checkBox.on {
-            self.audioManager.play( sound: .on )
+            self.audioManager.play( sound: .checkOn )
         } else {
-            self.audioManager.play( sound: .off )
+            self.audioManager.play( sound: .checkOff )
         }
         
     }

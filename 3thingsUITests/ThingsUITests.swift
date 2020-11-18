@@ -36,7 +36,6 @@ class ThingsUITests: XCTestCase {
     }
     
     func testField() {
-        
 
     }
     
