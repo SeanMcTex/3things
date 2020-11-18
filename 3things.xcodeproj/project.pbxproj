@@ -1046,7 +1046,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.mcmains.things.things-Today";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore net.mcmains.things.things-Today";
+				PROVISIONING_PROFILE_SPECIFIER = "3 Things Today Widget";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "3things/3things-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
